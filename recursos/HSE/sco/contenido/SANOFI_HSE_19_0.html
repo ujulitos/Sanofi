@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="es" />
+
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="../js/Buzz.min.js"></script> <!-- colocar esta ruta por la actualizacion de google de no mas de 75 mediaplayers o audios en cada pagweb -->
+     <script src="js/Audios.js"></script>    <!-- colocar esta ruta por la actualizacion de google de no mas de 75 mediaplayers o audios en cada pagweb -->
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/Time.js"></script>
+    <script src="js/Animations.min.js"></script>
+    <script src="js/bounce.min.js"></script>
+    <link rel="stylesheet" href="css/Reset.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
+    <title>Slide 1</title>
+</head>
+
+<body onresize="location.reload()">
+    <div id="contenido">
+        <!-- Intro -->
+        <img id="fondo" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_0/fondo.png"></img>
+        <img id="pleca" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_0/pleca.png"></img>
+        <img id="imagen1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_0/img01.png"></img>
+        <img id="imagen2" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_0/img02.png"></img>
+         
+        <img id="btn1_inactivo" class="element" _origenx="290.715" _origeny="358.892" src="images/SANOFI_HSE_19_0/boton1_inactivo.png"></img>
+        <img id="btn2_inactivo" class="element" _origenx="417.5" _origeny="358.892" src="images/SANOFI_HSE_19_0/boton2_inactivo.png"></img>
+        <img id="btn3_inactivo" class="element" _origenx="545.381" _origeny="358.892" src="images/SANOFI_HSE_19_0/boton3_inactivo.png"></img>
+        <img id="btn4_inactivo" class="element" _origenx="673.322" _origeny="358.892" src="images/SANOFI_HSE_19_0/boton4_inactivo.png"></img>
+
+        <img id="btn1_activo" class="element" _origenx="290.715" _origeny="358.892" src="images/SANOFI_HSE_19_0/boton1_activo.png"></img>
+        <img id="btn2_activo" class="element" _origenx="417.5" _origeny="358.892" src="images/SANOFI_HSE_19_0/boton2_activo.png"></img>
+        <img id="btn3_activo" class="element" _origenx="545.381" _origeny="358.892" src="images/SANOFI_HSE_19_0/boton3_activo.png"></img>
+        <img id="btn4_activo" class="element" _origenx="673.322" _origeny="358.892" src="images/SANOFI_HSE_19_0/boton4_activo.png"></img>
+      
+       <!-- CHC -->
+        <img id="chc_imagen1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_1/img01.png"></img>
+
+        <img id="chc_instrucciones" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_1/instrucciones.png"></img>
+        <img id="chc_pop1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_1/pop1.png"></img>
+        <img id="chc_pop2" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_1/pop2.png"></img>
+        <img id="chc_pop3" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_1/pop3.png"></img>
+        <img id="chc_pop4" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_1/pop4.png"></img>
+        <img id="chc_pop5" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_1/pop5.png"></img>
+
+        <img id="chc_boton1" class="element" _origenx="747.162" _origeny="122.872" src="images/SANOFI_HSE_19_1/boton1.png"></img>
+        <img id="chc_boton2" class="element" _origenx="544.392" _origeny="213.959" src="images/SANOFI_HSE_19_1/boton2.png"></img>
+        <img id="chc_boton3" class="element" _origenx="750.123" _origeny="284.199" src="images/SANOFI_HSE_19_1/boton3.png"></img>
+        <img id="chc_boton4" class="element" _origenx="544.392" _origeny="411.366" src="images/SANOFI_HSE_19_1/boton4.png"></img>
+        <img id="chc_boton5" class="element" _origenx="750.123" _origeny="512.525" src="images/SANOFI_HSE_19_1/boton5.png"></img>
+       <!-- CEDIS -->
+        <img id="cedis_imagen1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_2/img01.png"></img>
+
+        <img id="cedis_instrucciones" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_2/instrucciones.png"></img>
+        <img id="cedis_pop1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_2/pop1.png"></img>
+        <img id="cedis_pop2" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_2/pop2.png"></img>
+        <img id="cedis_pop3" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_2/pop3.png"></img>
+        <img id="cedis_pop4" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_2/pop4.png"></img>
+        <img id="cedis_pop5" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_2/pop5.png"></img>
+
+        <img id="cedis_boton1" class="element" _origenx="743.55" _origeny="136.088" src="images/SANOFI_HSE_19_2/boton1.png"></img>
+        <img id="cedis_boton2" class="element" _origenx="544.392 " _origeny="209.153 " src="images/SANOFI_HSE_19_2/boton2.png"></img>
+        <img id="cedis_boton3" class="element" _origenx="743.516 " _origeny="283.598" src="images/SANOFI_HSE_19_2/boton3.png"></img>
+        <img id="cedis_boton4" class="element" _origenx="543.791" _origeny="371.717" src="images/SANOFI_HSE_19_2/boton4.png"></img>
+        <img id="cedis_boton5" class="element" _origenx="744.115" _origeny="471.675" src="images/SANOFI_HSE_19_2/boton5.png"></img>
+
+       <!-- PASTEUR -->
+        <img id="pasteur_imagen1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_3/img01.png"></img>
+
+        <img id="pasteur_instrucciones" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_3/instrucciones.png"></img>
+        <img id="pasteur_pop1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_3/pop1.png"></img>
+        <img id="pasteur_pop2" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_3/pop2.png"></img>
+        <img id="pasteur_pop3" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_3/pop3.png"></img>
+        <img id="pasteur_pop4" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_3/pop4.png"></img>
+        <img id="pasteur_pop5" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_3/pop5.png"></img>
+        <img id="pasteur_pop6" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_3/pop6.png"></img>
+        <img id="pasteur_pop7" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_3/pop7.png"></img>
+        <img id="pasteur_pop8" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_3/pop8.png"></img>
+        <img id="pasteur_pop9" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_3/pop9.png"></img>
+
+        <img id="pasteur_boton1" class="element" _origenx="603.929" _origeny="134.491" src="images/SANOFI_HSE_19_3/boton1.png"></img>
+        <img id="pasteur_boton2" class="element" _origenx="743.558" _origeny="136.089" src="images/SANOFI_HSE_19_3/boton2.png"></img>
+        <img id="pasteur_boton3" class="element" _origenx="741.531" _origeny="183.296" src="images/SANOFI_HSE_19_3/boton3.png"></img>
+        <img id="pasteur_boton4" class="element" _origenx="551.615" _origeny="178.774" src="images/SANOFI_HSE_19_3/boton4.png"></img>
+        <img id="pasteur_boton5" class="element" _origenx="551.615" _origeny="241.906" src="images/SANOFI_HSE_19_3/boton5.png"></img>      
+        <img id="pasteur_boton6" class="element" _origenx="630.896" _origeny="173.802" src="images/SANOFI_HSE_19_3/boton6.png"></img>
+        <img id="pasteur_boton7" class="element" _origenx="630.735" _origeny="242.691" src="images/SANOFI_HSE_19_3/boton7.png"></img>
+        <img id="pasteur_boton8" class="element" _origenx="739.489" _origeny="305.693" src="images/SANOFI_HSE_19_3/boton8.png"></img>
+        <img id="pasteur_boton9" class="element" _origenx="739.489" _origeny="384.083" src="images/SANOFI_HSE_19_3/boton9.png"></img>
+
+        <img id="pasteur_botonCerrar1" class="element" _origenx="426.23" _origeny="107.415" src="images/SANOFI_HSE_19_3/botonCerrar.png"></img>
+        <img id="pasteur_botonCerrar2" class="element" _origenx="767.289" _origeny="76.2" src="images/SANOFI_HSE_19_3/botonCerrar.png"></img>
+        <img id="pasteur_botonCerrar3" class="element" _origenx="770.396" _origeny="162.929" src="images/SANOFI_HSE_19_3/botonCerrar.png"></img>
+        <img id="pasteur_botonCerrar4" class="element" _origenx="408.613" _origeny="212.928" src="images/SANOFI_HSE_19_3/botonCerrar.png"></img>
+        <img id="pasteur_botonCerrar5" class="element" _origenx="416.62" _origeny="281.878" src="images/SANOFI_HSE_19_3/botonCerrar.png"></img>
+        <img id="pasteur_botonCerrar6" class="element" _origenx="414.609" _origeny="76.2" src="images/SANOFI_HSE_19_3/botonCerrar.png"></img>
+        <img id="pasteur_botonCerrar7" class="element" _origenx="419" _origeny="219" src="images/SANOFI_HSE_19_3/botonCerrar.png"></img>
+        <img id="pasteur_botonCerrar8" class="element" _origenx="426.897" _origeny="392.434" src="images/SANOFI_HSE_19_3/botonCerrar.png"></img>
+        <img id="pasteur_botonCerrar9" class="element" _origenx="776.456" _origeny="395.133" src="images/SANOFI_HSE_19_3/botonCerrar.png"></img>
+       <!-- AZTECA VACUNAS -->
+
+        <img id="azteca_imagen1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_4/img01.png"></img>
+
+        <img id="azteca_instrucciones" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_4/instrucciones.png"></img>
+        
+
+        <img id="azteca_boton1" class="element" _origenx="749.823" _origeny="140.524" src="images/SANOFI_HSE_19_4/boton1.png"></img>
+        <img id="azteca_boton2" class="element" _origenx="749.823" _origeny="172.68" src="images/SANOFI_HSE_19_4/boton2.png"></img>
+        <img id="azteca_boton3" class="element" _origenx="537.499" _origeny="218.311" src="images/SANOFI_HSE_19_4/boton3.png"></img>
+        <img id="azteca_boton4" class="element" _origenx="750.194" _origeny="218.948" src="images/SANOFI_HSE_19_4/boton4.png"></img>
+        <img id="azteca_boton5" class="element" _origenx="529.175" _origeny="284.933" src="images/SANOFI_HSE_19_4/boton5.png"></img>        
+        <img id="azteca_boton6" class="element" _origenx="750.593" _origeny="378.627" src="images/SANOFI_HSE_19_4/boton6.png"></img>
+
+        <img id="azteca_pop1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_4/pop1.png"></img>
+        <img id="azteca_pop2" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_4/pop2.png"></img>
+        <img id="azteca_pop3" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_4/pop3.png"></img>
+        <img id="azteca_pop4" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_4/pop4.png"></img>
+        <img id="azteca_pop5" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_4/pop5.png"></img>
+        <img id="azteca_pop6" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_4/pop6.png"></img>
+        
+        <img id="azteca_botonCerrar1" class="element" _origenx="735.685" _origeny="171.686" src="images/SANOFI_HSE_19_4/botonCerrar.png"></img>
+        <img id="azteca_botonCerrar2" class="element" _origenx="415.63" _origeny="74.512" src="images/SANOFI_HSE_19_4/botonCerrar.png"></img>
+        <img id="azteca_botonCerrar3" class="element" _origenx="520.908" _origeny="247.707" src="images/SANOFI_HSE_19_4/botonCerrar.png"></img>
+        <img id="azteca_botonCerrar4" class="element" _origenx="882.297" _origeny="160.512" src="images/SANOFI_HSE_19_4/botonCerrar.png"></img>
+        <img id="azteca_botonCerrar5" class="element" _origenx="632.306" _origeny="203.335" src="images/SANOFI_HSE_19_4/botonCerrar.png"></img>
+        <img id="azteca_botonCerrar6" class="element" _origenx="528.14" _origeny="317.968" src="images/SANOFI_HSE_19_4/botonCerrar.png"></img>
+
+        <img id="azteca_botonSiguiente" class="element" _origenx="930" _origeny="322.149" src="images/SANOFI_HSE_19_4/botonSiguiente.png"></img>
+
+        <img id="2azteca_imagen1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_4/img02.png"></img>
+        <img id="2azteca_boton1" class="element" _origenx="756.919" _origeny="168.155" src="images/SANOFI_HSE_19_4/boton1.png"></img>
+        <img id="2azteca_boton2" class="element" _origenx="756.919" _origeny="469.406" src="images/SANOFI_HSE_19_4/boton2.png"></img>
+
+        <img id="2azteca_pop1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_4/2pop1.png"></img>
+        <img id="2azteca_pop2" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_19_4/2pop2.png"></img>
+
+        <img id="2azteca_botonCerrar1" class="element" _origenx="794.06" _origeny="220.229" src="images/SANOFI_HSE_19_4/botonCerrar.png"></img>
+        <img id="2azteca_botonCerrar2" class="element" _origenx="459.4" _origeny="321.274" src="images/SANOFI_HSE_19_4/botonCerrar.png"></img>
+        <!-- cargador -->
+        <img id="cargando" class="cargando" src="images/cargando.gif"></img>
+        <canvas id="canvas_id"></canvas>
+
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+
+        cacularEscala();
+        ajustarEscenario();
+         var Audios = new Array();
+
+         Audios[1] = new buzz.sound("audios/SIndustrial_HSE_19_02_extra", {
+            formats: ["mp3"],
+            preload: true
+        });
+         Audios[2] = new buzz.sound("audios/SIndustrial_HSE_19_02", {
+            formats: ["mp3"],
+            preload: true
+        });
+         
+
+
+        function preload() {
+            animacion_entrada($("#cargando"), "default", .2, 0);
+            var preload = new createjs.LoadQueue();
+            preload.addEventListener("complete", iniciaCargador);
+            $.each($('.element'), function() {
+                preload.loadFile($("#" + this.id).attr('src'));
+                //console.log($("#" + this.id).attr('src'));
+            });
+        }
+
+        function iniciaCargador(event) {
+            console.log('load complete');
+            $.each($('.element'), function() {
+                inicializar($("#" + this.id));
+            });
+            $("#cargando").show();
+            $("#cargando").css({
+                'opacity': '1'
+            });
+            animacion_salida($("#cargando"), "desaparece", 0, muestraContenido);
+        }
+
+
+        function muestraContenido() {
+            animacion_entrada($("#fondo"), "default", 0, 0);
+            animacion_entrada($("#pleca"), "default", .7, .2);
+            animacion_entrada($("#imagen1"), "default", .7, .2);
+            //animacion_entrada($("#imagen2"), "izq_der", .7, .5);  
+                        
+             //parent.playAudio(122, 1500,terminaAudio48);
+             playAudio2(Audios[1], 1500, terminaAudio48);
+
+
+        }
+     
+		function terminaAudio48(){
+            //setTimeout(function(){ parpadea($("#btn"), .5); }, 3000);
+	        parpadea($("#btn1_inactivo"), 0.5);
+            parpadea($("#btn2_inactivo"), 0.5);
+            parpadea($("#btn3_inactivo"), 0.5);
+            parpadea($("#btn4_inactivo"), 0.5);       
+		}
+        function desapareceIntro(){
+            animacion_salida($("#imagen1"), "desaparece", 0, 0);
+            animacion_salida($("#btn1_inactivo"), "desaparece", 0, 0);
+            animacion_salida($("#btn2_inactivo"), "desaparece", 0, 0);
+            animacion_salida($("#btn3_inactivo"), "desaparece", 0, 0);
+            animacion_salida($("#btn4_inactivo"), "desaparece", 0, 0);
+            animacion_salida($("#btn1_activo"), "desaparece", 0, 0);
+            animacion_salida($("#btn2_activo"), "desaparece", 0, 0);
+            animacion_salida($("#btn3_activo"), "desaparece", 0, 0);
+            animacion_salida($("#btn4_activo"), "desaparece", 0, 0);     
+        }
+       /**********Intro**********************************/
+        $("#btn1_inactivo").click(function() {
+            if ($(this).css('cursor') == 'pointer') {
+                TweenMax.killTweensOf($(this));
+                $(this).hide();
+                $(this).css({
+                    'cursor': 'default',
+                    'opacity': '1'
+                });
+             	animacion_entrada($("#btn1_activo"), "default", 0, 0);
+                setTimeout(function(){ 
+                    mostrar_chc();
+                }, 500);
+            }
+        });
+        $("#btn2_inactivo").click(function() {
+            if ($(this).css('cursor') == 'pointer') {
+                TweenMax.killTweensOf($(this));
+                $(this).hide();
+                $(this).css({
+                    'cursor': 'default',
+                    'opacity': '1'
+                });
+              animacion_entrada($("#btn2_activo"), "default", 0, 0);
+              setTimeout(function(){
+                mostrar_cedis();
+              },500);
+            }
+        });
+        $("#btn3_inactivo").click(function() {
+            if ($(this).css('cursor') == 'pointer') {
+                TweenMax.killTweensOf($(this));
+                $(this).hide();
+                $(this).css({
+                    'cursor': 'default',
+                    'opacity': '1'
+                });
+                animacion_entrada($("#btn3_activo"), "default", 0, 0);
+                setTimeout(function(){
+                mostrar_pasteur();
+              },500);   
+            }
+        });
+        $("#btn4_inactivo").click(function() {
+            if ($(this).css('cursor') == 'pointer') {
+                TweenMax.killTweensOf($(this));
+                $(this).hide();
+                $(this).css({
+                    'cursor': 'default',
+                    'opacity': '1'
+                });
+               animacion_entrada($("#btn4_activo"), "default", 0, 0);
+               setTimeout(function(){
+                mostrar_azteca();
+               },500);
+            }
+        });
+
+        /************************mostrar_chc**************************/
+        function mostrar_chc(){
+            desapareceIntro();
+            animacion_entrada($("#chc_instrucciones"), "izq_der", 0.7, 1);
+            animacion_entrada($("#chc_imagen1"), "der_izq", 0.7, 1);
+            animacion_entrada($("#chc_boton1"), "der_izq", 0.7, 1.5);
+            animacion_entrada($("#chc_boton2"), "izq_der", 0.7, 2);
+            animacion_entrada($("#chc_boton3"), "izq_der", 0.7, 3);
+            animacion_entrada($("#chc_boton4"), "izq_der", 0.7, 4);
+            animacion_entrada($("#chc_boton5"), "izq_der", 0.7, 5);
+            
+           // parent.playAudio(49, 1000,parpadeBoton1_chc);
+            playAudio2(Audios[2], 1000, parpadeBoton1_chc);
+
+            function parpadeBoton1_chc(){
+             parpadea($("#chc_boton1"), .5);
+            }
+            
+           
+            $("#chc_boton1").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#chc_pop1"), "default", .7, 0);               
+                   parpadea($("#chc_boton2"), .5);
+               
+                }
+            });
+            $("#chc_boton2").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#chc_pop2"), "default", .7, 0);
+                   parpadea($("#chc_boton3"), .5);
+               
+                }
+            });
+              $("#chc_boton3").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#chc_pop3"), "default", .7, 0);
+                   parpadea($("#chc_boton4"), .5);
+               
+                }
+            });
+                $("#chc_boton4").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#chc_pop4"), "default", .7, 0);
+                   parpadea($("#chc_boton5"), .5);
+               
+                }
+            });
+
+            $("#chc_boton5").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#chc_pop5"), "default", .7, 0);
+                   terminarPantalla()
+               
+                }
+            });
+        };
+
+        function mostrar_cedis(){
+            desapareceIntro();
+
+            animacion_entrada($("#cedis_instrucciones"), "izq_der", 0.7, 1);
+            animacion_entrada($("#cedis_imagen1"), "der_izq", 0.7, 1);
+            animacion_entrada($("#cedis_boton1"), "der_izq", 0.7, 1.5);
+            animacion_entrada($("#cedis_boton2"), "izq_der", 0.7, 2);
+            animacion_entrada($("#cedis_boton3"), "izq_der", 0.7, 3);
+            animacion_entrada($("#cedis_boton4"), "izq_der", 0.7, 4);
+            animacion_entrada($("#cedis_boton5"), "izq_der", 0.7, 5);
+
+            //parent.playAudio(49, 1000,parpadeBoton1_cedis);
+            playAudio2(Audios[2], 1000, parpadeBoton1_cedis);
+
+            function parpadeBoton1_cedis(){
+             parpadea($("#cedis_boton1"), .5);
+            }
+
+            $("#cedis_boton1").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#cedis_pop1"), "default", .7, 0);               
+                   parpadea($("#cedis_boton2"), .5);
+               
+                }
+            });
+            $("#cedis_boton2").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#cedis_pop2"), "default", .7, 0);
+                   parpadea($("#cedis_boton3"), .5);
+               
+                }
+            });
+              $("#cedis_boton3").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#cedis_pop3"), "default", .7, 0);
+                   parpadea($("#cedis_boton4"), .5);
+               
+                }
+            });
+            $("#cedis_boton4").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#cedis_pop4"), "default", .7, 0);
+                   parpadea($("#cedis_boton5"), .5);
+               
+                }
+            });
+
+            $("#cedis_boton5").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#cedis_pop5"), "default", .7, 0);
+                   terminarPantalla();
+               
+                }
+            });
+        }
+
+        /***********************mostrar_pasteur****************************/
+
+        function mostrar_pasteur(){
+            desapareceIntro();
+
+            animacion_entrada($("#pasteur_instrucciones"), "izq_der", 0.7, 1);
+            animacion_entrada($("#pasteur_imagen1"), "der_izq", 0.7, 1);
+            animacion_entrada($("#pasteur_boton1"), "der_izq", 0.7, 1.5);
+            animacion_entrada($("#pasteur_boton2"), "izq_der", 0.7, 2);
+            animacion_entrada($("#pasteur_boton3"), "izq_der", 0.7, 3);
+            animacion_entrada($("#pasteur_boton4"), "izq_der", 0.7, 4);
+            animacion_entrada($("#pasteur_boton5"), "izq_der", 0.7, 5);
+            animacion_entrada($("#pasteur_boton6"), "izq_der", 0.7, 6);
+            animacion_entrada($("#pasteur_boton7"), "izq_der", 0.7, 6.1);
+            animacion_entrada($("#pasteur_boton8"), "izq_der", 0.7, 6.2);
+            animacion_entrada($("#pasteur_boton9"), "izq_der", 0.7, 6.3);
+
+            //parent.playAudio(49, 1000,parpadeBoton1_cedis);
+            playAudio2(Audios[2], 1000, parpadeBoton1_cedis);
+
+            function parpadeBoton1_cedis(){
+             parpadea($("#pasteur_boton1"), .5);
+            }
+
+            $("#pasteur_boton1").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#pasteur_pop1"), "default", .7, 0);               
+                   parpadea($("#pasteur_botonCerrar1"), .5);
+
+               
+                }
+            });
+            $("#pasteur_boton2").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#pasteur_pop2"), "default", .7, 0);
+                   parpadea($("#pasteur_botonCerrar2"), .5);
+               
+                }
+            });
+              $("#pasteur_boton3").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#pasteur_pop3"), "default", .7, 0);
+                   parpadea($("#pasteur_botonCerrar3"), .5);
+               
+                }
+            });
+                $("#pasteur_boton4").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#pasteur_pop4"), "default", .7, 0);
+                   parpadea($("#pasteur_botonCerrar4"), .5);
+               
+                }
+            });
+
+                  $("#pasteur_boton5").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#pasteur_pop5"), "default", .7, 0);
+                      parpadea($("#pasteur_botonCerrar5"), .5);
+               
+                }
+            });
+            
+
+            $("#pasteur_boton6").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#pasteur_pop6"), "default", .7, 0);
+                    parpadea($("#pasteur_botonCerrar6"), .5);
+               
+                }
+            });
+
+            $("#pasteur_boton7").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#pasteur_pop7"), "default", .7, 0);
+                   parpadea($("#pasteur_botonCerrar7"), .5);
+               
+                }
+            });
+
+            $("#pasteur_boton8").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#pasteur_pop8"), "default", .7, 0);
+                   parpadea($("#pasteur_botonCerrar8"), .5);
+               
+                }
+            });
+
+            $("#pasteur_boton9").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#pasteur_pop9"), "default", .7, 0);
+                    parpadea($("#pasteur_botonCerrar9"), .5);
+               
+                }
+            });
+
+            $("#pasteur_botonCerrar1").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_salida($("#pasteur_pop1"), "desaparece", 0, 0);               
+                   parpadea($("#pasteur_boton2"), .5);
+               
+                }
+            });
+
+            $("#pasteur_botonCerrar2").click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                        TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $(this).css({
+                            'cursor': 'default',
+                            'opacity': '1'
+                        });
+                        animacion_salida($("#pasteur_pop2"), "desaparece", 0, 0);               
+                       parpadea($("#pasteur_boton3"), .5);
+                   
+                    }
+            });
+            $("#pasteur_botonCerrar3").click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                        TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $(this).css({
+                            'cursor': 'default',
+                            'opacity': '1'
+                        });
+                        animacion_salida($("#pasteur_pop3"), "desaparece", 0, 0);               
+                       parpadea($("#pasteur_boton4"), .5);
+                   
+                    }
+            });
+            $("#pasteur_botonCerrar4").click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                        TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $(this).css({
+                            'cursor': 'default',
+                            'opacity': '1'
+                        });
+                        animacion_salida($("#pasteur_pop4"), "desaparece", 0, 0);               
+                       parpadea($("#pasteur_boton5"), .5);
+                   
+                    }
+            });
+
+            $("#pasteur_botonCerrar5").click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                        TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $(this).css({
+                            'cursor': 'default',
+                            'opacity': '1'
+                        });
+                        animacion_salida($("#pasteur_pop5"), "desaparece", 0, 0);               
+                       parpadea($("#pasteur_boton6"), .5);
+                   
+                    }
+            });
+
+            $("#pasteur_botonCerrar6").click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                        TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $(this).css({
+                            'cursor': 'default',
+                            'opacity': '1'
+                        });
+                        animacion_salida($("#pasteur_pop6"), "desaparece", 0, 0);               
+                       parpadea($("#pasteur_boton7"), .5);
+                   
+                    }
+            });
+
+            $("#pasteur_botonCerrar7").click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                        TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $(this).css({
+                            'cursor': 'default',
+                            'opacity': '1'
+                        });
+                        animacion_salida($("#pasteur_pop7"), "desaparece", 0, 0);               
+                       parpadea($("#pasteur_boton8"), .5);
+                   
+                    }
+            });
+
+            $("#pasteur_botonCerrar8").click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                        TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $(this).css({
+                            'cursor': 'default',
+                            'opacity': '1'
+                        });
+                        animacion_salida($("#pasteur_pop8"), "desaparece", 0, 0);               
+                       parpadea($("#pasteur_boton9"), .5);
+                   
+                    }
+            });
+
+            $("#pasteur_botonCerrar9").click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                        TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $(this).css({
+                            'cursor': 'default',
+                            'opacity': '1'
+                        });
+                        animacion_salida($("#pasteur_pop9"), "desaparece", 0, 0);               
+                       terminarPantalla();
+                   
+                    }
+            });
+
+        }
+        /****************************mostrar_azteca***************************************/
+
+        function mostrar_azteca(){
+            desapareceIntro();
+
+            animacion_entrada($("#azteca_instrucciones"), "izq_der", 0.7, 1);
+            animacion_entrada($("#azteca_imagen1"), "der_izq", 0.7, 1);
+            animacion_entrada($("#azteca_boton1"), "der_izq", 0.7, 1.5);
+            animacion_entrada($("#azteca_boton2"), "izq_der", 0.7, 2);
+            animacion_entrada($("#azteca_boton3"), "izq_der", 0.7, 3);
+            animacion_entrada($("#azteca_boton4"), "izq_der", 0.7, 4);
+            animacion_entrada($("#azteca_boton5"), "izq_der", 0.7, 5);
+            animacion_entrada($("#azteca_boton6"), "izq_der", 0.7, 6);
+
+            //parent.playAudio(49, 1000,parpadeBoton1_azteca);
+             playAudio2(Audios[2], 1000, parpadeBoton1_azteca);
+
+            function parpadeBoton1_azteca(){
+             parpadea($("#azteca_boton1"), .5);
+            }
+
+           
+            $("#azteca_boton1").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#azteca_pop1"), "default", .7, 0);               
+                   parpadea($("#azteca_botonCerrar1"), .5);
+               
+                }
+            });
+            
+            $("#azteca_boton2").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#azteca_pop2"), "default", .7, 0);
+                   parpadea($("#azteca_botonCerrar2"), .5);
+               
+                }
+            });
+              $("#azteca_boton3").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#azteca_pop3"), "default", .7, 0);
+                   parpadea($("#azteca_botonCerrar3"), .5);
+               
+                }
+            });
+                $("#azteca_boton4").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#azteca_pop4"), "default", .7, 0);
+                   parpadea($("#azteca_botonCerrar4"), .5);
+               
+                }
+            });
+
+                  $("#azteca_boton5").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#azteca_pop5"), "default", .7, 0);
+                      parpadea($("#azteca_botonCerrar5"), .5);
+               
+                }
+            });
+            
+
+            $("#azteca_boton6").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#azteca_pop6"), "default", .7, 0);
+                   parpadea($("#azteca_botonCerrar6"), .5);
+               
+                }
+            });
+
+            $("#azteca_botonCerrar1").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_salida($("#azteca_pop1"), "desaparece", 0, 0);               
+                   parpadea($("#azteca_boton2"), .5);
+               
+                }
+            });
+
+            $("#azteca_botonCerrar2").click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                        TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $(this).css({
+                            'cursor': 'default',
+                            'opacity': '1'
+                        });
+                        animacion_salida($("#azteca_pop2"), "desaparece", 0, 0);               
+                       parpadea($("#azteca_boton3"), .5);
+                   
+                    }
+            });
+            $("#azteca_botonCerrar3").click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                        TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $(this).css({
+                            'cursor': 'default',
+                            'opacity': '1'
+                        });
+                        animacion_salida($("#azteca_pop3"), "desaparece", 0, 0);               
+                       parpadea($("#azteca_boton4"), .5);
+                   
+                    }
+            });
+            $("#azteca_botonCerrar4").click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                        TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $(this).css({
+                            'cursor': 'default',
+                            'opacity': '1'
+                        });
+                        animacion_salida($("#azteca_pop4"), "desaparece", 0, 0);               
+                       parpadea($("#azteca_boton5"), .5);
+                   
+                    }
+            });
+
+            $("#azteca_botonCerrar5").click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                        TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $(this).css({
+                            'cursor': 'default',
+                            'opacity': '1'
+                        });
+                        animacion_salida($("#azteca_pop5"), "desaparece", 0, 0);               
+                       parpadea($("#azteca_boton6"), .5);
+                   
+                    }
+            });
+
+            $("#azteca_botonCerrar6").click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                        TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $(this).css({
+                            'cursor': 'default',
+                            'opacity': '1'
+                        });
+                        animacion_salida($("#azteca_pop6"), "desaparece", 0, 0);               
+                       parpadea($("#azteca_botonSiguiente"), .5);
+                   
+                    }
+            });
+
+            $("#azteca_botonSiguiente").click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                        TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $(this).css({
+                            'cursor': 'default',
+                            'opacity': '1'
+                        });
+                        animacion_salida($("#azteca_imagen1"), "desaparece", 0, 0);
+                        animacion_entrada($("#2azteca_imagen1"), "der_izq", 0.7, 1);
+                        animacion_entrada($("#2azteca_boton1"), "der_izq", 0.7, 1.5);
+                        animacion_entrada($("#2azteca_boton2"), "izq_der", 0.7, 2);               
+                        parpadea($("#2azteca_boton1"), 2);
+                   
+                    }
+            });
+
+            $("#2azteca_boton1").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#2azteca_pop1"), "default", .7, 0);               
+                   parpadea($("#2azteca_botonCerrar1"), .5);
+               
+                }
+            });
+            
+            $("#2azteca_boton2").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_entrada($("#2azteca_pop2"), "default", .7, 0);
+                   parpadea($("#2azteca_botonCerrar2"), .5);
+               
+                }
+            });
+            $("#2azteca_botonCerrar1").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    animacion_salida($("#2azteca_pop1"), "desaparece", 0, 0);               
+                   parpadea($("#2azteca_boton2"), .5);
+               
+                }
+            });
+
+            $("#2azteca_botonCerrar2").click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                        TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $(this).css({
+                            'cursor': 'default',
+                            'opacity': '1'
+                        });
+                        animacion_salida($("#2azteca_pop2"), "desaparece", 0, 0);               
+                       terminarPantalla();
+                   
+                    }
+            });
+        }
+
+        
+
+        /*********************************************************************************/
+        preload();
+
+    });
+
+</script>
+
+</html>

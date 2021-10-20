@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="es" />
+
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/Time.js"></script>
+    <script src="js/Animations.min.js"></script>
+    <script src="js/bounce.min.js"></script>
+    <link rel="stylesheet" href="css/Reset.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
+    <title>Slide 1</title>
+</head>
+
+<body onresize="location.reload()">
+    <div id="contenido">
+        
+        <img id="imagen1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/img01.png"></img>
+        <img id="imagen2" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/img02.png"></img>
+        <!-- <img id="imagen3" class="element" _origenx="0" _origeny="0" src="images/TMS_SMER_Mod1_41/img02.png"></img>  -->
+        
+        <img id="botonIniciar" class="element" _origenx="385.398" _origeny="466.422" src="images/SANOFI_AISC_11/inicio.png"></img>
+        <img id="imagen3" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/img03.png"></img>
+        <img id="imagen4" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/img04.png"></img>
+
+        <img id= "botonCerrar" class="element" _origenx="569.013" _origeny="60.528" src="images/SANOFI_AISC_11/btn_cerrarInstruccion.png"></img> 
+
+         <!--************************************PREGUNTAS************************************************* -->
+        <img id="pregunta01" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/persona1.png"></img>
+        <img id="retroContinuar01" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/retroContinuar1.png"></img>
+        <img id="retroReintentar01" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/retroReintentar.png"></img>
+
+        <img id="imagen5" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/img05.png"></img>
+        <img id="pregunta02" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/persona2.png"></img>
+        <img id="retroContinuar02" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/retroContinuar2.png"></img>
+        <img id="retroReintentar02" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/retroReintentar.png"></img>
+
+        <img id="imagen6" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/img06.png"></img>
+        <img id="pregunta03" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/persona3.png"></img>
+        <img id="retroContinuar03" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/retroContinuar3.png"></img>
+        <img id="retroReintentar03" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/retroReintentar.png"></img>
+
+        <img id="imagen7" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/img07.png"></img>
+        <img id="pregunta04" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/persona4.png"></img>
+        <img id="retroContinuar04" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/retroContinuar4.png"></img>
+        <img id="retroReintentar04" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/retroReintentar.png"></img>
+
+        <img id="imagen8" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/img08.png"></img>
+        <img id="pregunta05" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/persona5.png"></img>
+        <img id="retroContinuar05" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/retroContinuar5.png"></img>
+        <img id="retroReintentar05" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/retroReintentar.png"></img>
+
+        <img id="imagen9" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/img09.png"></img>
+        <img id="pregunta06" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/persona6.png"></img>
+        <img id="retroContinuar06" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/retroContinuar6.png"></img>
+        <img id="retroReintentar06" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/retroReintentar.png"></img>
+
+        <img id="imagen10" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/img10.png"></img>
+        <!--****************************************************************************************************-->
+        <!--************************************PRIMER PASADA************************************************* -->
+        <div _id="01_1" id="lugar1" class="element boton drop" _origenx="185" _origeny="135" style="width:100px; height:50px;"></div>
+        <div _id="02_2" id="lugar2" class="element boton drop" _origenx="190.076" _origeny="170" style="width:91.232px; height:40px;"></div>
+         <div _id="03_3" id="lugar3" class="element boton drop" _origenx="135" _origeny="350" style="width:91.232px; height:60px;"></div>
+        <div _id="04_4" id="lugar4" class="element boton drop" _origenx="190" _origeny="190" style="width:85px; height:45px;"></div>
+        <div _id="05_5" id="lugar5" class="element boton drop" _origenx="188.679" _origeny="246.979" style="width:86.028px; height:102.329px;"></div>
+        <div _id="06_6" id="lugar6" class="element boton drop" _origenx="170.774" _origeny="470" style="width:110.534px; height:80px;"></div>
+
+        <img _id="01_1" id="drag1_1" class="element drag" _origenx="53.302" _origeny="153.783" src="images/SANOFI_AISC_11/elemento1.png"></img>
+        <img _id="02_2" id="drag2_1" class="element drag" _origenx="357.365" _origeny="168.285" src="images/SANOFI_AISC_11/elemento2.png"></img> 
+        <img _id="03_3" id="drag3_1"  class="element drag" _origenx="57.306" _origeny="293.43" src="images/SANOFI_AISC_11/elemento3.png"></img>
+        <img _id="04_4"  id="drag4_1" class="element drag" _origenx="361.476" _origeny="439.812" src="images/SANOFI_AISC_11/elemento4.png"></img>
+        <img _id="05_5"  id="drag5_1" class="element drag" _origenx="368.421" _origeny="287.976" src="images/SANOFI_AISC_11/elemento5.png"></img>
+        <img _id="06_6" id="drag6_1" class="element drag" _origenx="60.014" _origeny="430.985" src="images/SANOFI_AISC_11/elemento6.png"></img>
+        
+        <!--**************************************************************************************************--> 
+    
+        <!--*********************************BOTONES VERDADERO FALSO************************************-->
+        <div id="verdadero01" class="element boton respuesta" _origenx="593.675" _origeny="218.489" style="width:106.746px; height:106.746px;"></div>
+        <div id="falso01" class="element boton respuesta" _origenx="804.633" _origeny="218.489" style="width:106.746px; height:106.746px;"></div>
+
+        <div id="verdadero02" class="element boton respuesta" _origenx="593.675" _origeny="218.489" style="width:106.746px; height:106.746px;"></div>
+        <div id="falso02" class="element boton respuesta" _origenx="804.633" _origeny="218.489" style="width:106.746px; height:106.746px;"></div>
+
+        <div id="verdadero03" class="element boton respuesta" _origenx="593.675" _origeny="218.489" style="width:106.746px; height:106.746px;"></div>
+        <div id="falso03" class="element boton respuesta" _origenx="804.633" _origeny="218.489" style="width:106.746px; height:106.746px;"></div>
+
+        <div id="verdadero04" class="element boton respuesta" _origenx="593.675" _origeny="218.489" style="width:106.746px; height:106.746px;"></div>
+        <div id="falso04" class="element boton respuesta" _origenx="804.633" _origeny="218.489" style="width:106.746px; height:106.746px;"></div>
+
+        <div id="verdadero05" class="element boton respuesta" _origenx="593.675" _origeny="218.489" style="width:106.746px; height:106.746px;"></div>
+        <div id="falso05" class="element boton respuesta" _origenx="804.633" _origeny="218.489" style="width:106.746px; height:106.746px;"></div>
+
+        <div id="verdadero06" class="element boton respuesta" _origenx="593.675" _origeny="218.489" style="width:106.746px; height:106.746px;"></div>
+        <div id="falso06" class="element boton respuesta" _origenx="804.633" _origeny="218.489" style="width:106.746px; height:106.746px;"></div>
+        <!--***********************************************************************************************-->
+        <!--***************************************BOTONES VALIDACIONES***************************************-->
+        <img id= "botonContinuar01" class="element" _origenx="673" _origeny="484.595" src="images/SANOFI_AISC_11/continuar.png"></img>
+        <img id= "botonReintentar01" class="element" _origenx="673" _origeny="484.595" src="images/SANOFI_AISC_11/reintentar.png"></img>
+
+         <img id= "botonContinuar02" class="element" _origenx="673" _origeny="484.595" src="images/SANOFI_AISC_11/continuar.png"></img>
+        <img id= "botonReintentar02" class="element" _origenx="673" _origeny="484.595" src="images/SANOFI_AISC_11/reintentar.png"></img>
+
+         <img id= "botonContinuar03" class="element" _origenx="673" _origeny="484.595" src="images/SANOFI_AISC_11/continuar.png"></img>
+        <img id= "botonReintentar03" class="element" _origenx="673" _origeny="484.595" src="images/SANOFI_AISC_11/reintentar.png"></img>
+
+         <img id= "botonContinuar04" class="element" _origenx="673" _origeny="484.595" src="images/SANOFI_AISC_11/continuar.png"></img>
+        <img id= "botonReintentar04" class="element" _origenx="673" _origeny="484.595" src="images/SANOFI_AISC_11/reintentar.png"></img>
+
+         <img id= "botonContinuar05" class="element" _origenx="673" _origeny="484.595" src="images/SANOFI_AISC_11/continuar.png"></img>
+        <img id= "botonReintentar05" class="element" _origenx="673" _origeny="484.595" src="images/SANOFI_AISC_11/reintentar.png"></img>
+
+         <img id= "botonContinuar06" class="element" _origenx="673" _origeny="484.595" src="images/SANOFI_AISC_11/continuar.png"></img>
+        <img id= "botonReintentar06" class="element" _origenx="673" _origeny="484.595" src="images/SANOFI_AISC_11/reintentar.png"></img>
+        <!--***********************************************************************************************-->
+        <img id="retroBien" class="element" _origenx="0" _origeny="0" src="images/SANOFI_AISC_11/retroBien.png"></img>
+      
+        <!-- cargador -->
+        <img id="cargando" class="cargando" src="images/cargando.gif"></img>
+        <canvas id="canvas_id"></canvas>
+
+    </div>
+</body>
+<style >
+ /*   #puntajeDIVRetroMal {
+    width: 100%;
+}
+
+#puntajeTXTRetroMal {
+    font-family: "roboto";
+    font-size: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    text-align: center;
+}*/
+
+
+    .boton {
+        background-color: rgba(167, 255, 108, 0);
+    }
+
+    .respuesta{
+        cursor: pointer;
+    }
+</style>
+<script>
+    $(document).ready(function() {
+
+        cacularEscala();
+        ajustarEscenario();
+
+        var cuantaosLugares = 6;
+        var cuantasPiezas = 6;
+        var dragsColocados = new Array();
+        var contador = 1;
+        function preload() {
+            animacion_entrada($("#cargando"), "default", .2, 0);
+            var preload = new createjs.LoadQueue();
+            preload.addEventListener("complete", iniciaCargador);
+            $.each($('.element'), function() {
+                preload.loadFile($("#" + this.id).attr('src'));
+                //console.log($("#" + this.id).attr('src'));
+            });
+        }
+
+        function iniciaCargador(event) {
+            console.log('load complete');
+            $.each($('.element'), function() {
+                inicializar($("#" + this.id));
+            });
+            $("#cargando").show();
+            $("#cargando").css({
+                'opacity': '1'
+            });
+            animacion_salida($("#cargando"), "desaparece", 0, muestraContenido);
+        }
+
+
+        function muestraContenido() {
+           animacion_entrada($("#imagen1"), "default", .7, .2);
+            animacion_entrada($("#imagen2"), "izq_der", .7, .5);
+             
+             parent.playAudio(22, 500, instrucciones);
+            //comenzarEvaluacion();
+        }
+        
+        function instrucciones(){
+            parpadea($("#botonIniciar"), 0.5);
+        }
+        $("#botonIniciar").click(function() {
+            TweenMax.killTweensOf($(this));
+            $(this).hide();
+
+            animacion_salida($("#imagen2"), "desaparece", 0);
+            animacion_entrada($("#imagen3"), "der_izq", .7, .7);
+
+            setTimeout(function() {
+               
+                parpadea($("#botonCerrar"), 0);
+            }, 1500);
+        });
+
+        $("#botonCerrar").click(function() {
+            TweenMax.killTweensOf($(this));
+            $(this).hide();
+            animacion_salida($("#imagen3"), "desaparece", 0);
+            
+            setTimeout(function() {
+                comenzarEvaluacion();
+            }, 1500);
+        });
+
+        
+        function comenzarEvaluacion(){
+            var dropActivoSubstr = "";
+            var dragActivoSubstr = ""; 
+            animacion_entrada($("#imagen4"), "izq_der", .5, 0.3);
+
+            $(".drag").draggable({
+                disabled: true
+            });
+
+            function pasada1(){
+            for (a = 1; a <= cuantasPiezas; a++) {
+                for (b = 1; b <= cuantaosLugares; b++) {
+                  dragsColocados[dragsColocados.length] = false;
+                
+                  animacion_entrada($("#drag" + a + "_" + b), "izq_der", .5, 0 + (a * .1));
+                  //animacion_entrada($("#lugar" + b), "default", .5, 0 + (b * 0));
+                }
+            }
+            animacion_entrada($("#lugar1"),"default",0,0);
+            parpadea($("#drag1_1"),.6)
+            $("#drag1_1").draggable({
+                  revert: "invalid",
+                  cursor: "pointer",
+                  disabled: false,
+                  start: function( event, ui ) {
+
+                    var esteID = $(this).attr("_id");
+                    var esteIDSubstr = $(this).attr("_id").substr(0, 2);
+                    console.log("Drag seleccionado: " + esteIDSubstr);
+                    dragActivo = esteID;
+                    dragActivoSubstr = esteIDSubstr;
+                    //TweenMax.killTweensOf($(this));
+                    //$(".drop").show();                        
+                    
+                  }
+            });
+
+            $("#lugar1").droppable({
+                accept: "#drag1_1",
+                drop: function(event, ui) {
+                        var esteID = $(this).attr("_id");
+                        var esteIDSubstr = $(this).attr("_id").substr(0, 2);
+                        dropActivo = esteID;
+                        dropActivoSubstr = esteIDSubstr;
+                        console.log("colisión con: " + esteIDSubstr);
+                      
+                        checkMatch();
+                }
+            });
+        }
+
+        function pasada2(){
+        	animacion_salida($("#lugar1"),"desaparece",0,0);
+        	animacion_entrada($("#lugar2"),"default",0,0);
+            parpadea($("#drag2_1"),.6);
+            $("#drag2_1").draggable({
+                  revert: "invalid",
+                  cursor: "pointer",
+                  disabled: false,
+                  start: function( event, ui ) {
+
+                    var esteID = $(this).attr("_id");
+                    var esteIDSubstr = $(this).attr("_id").substr(0, 2);
+                    console.log("Drag seleccionado: " + esteIDSubstr);
+                    dragActivo = esteID;
+                    dragActivoSubstr = esteIDSubstr; 
+                  }
+            });
+
+            $("#lugar2").droppable({
+                accept: "#drag2_1",
+                drop: function(event, ui) {
+                        var esteID = $(this).attr("_id");
+                        var esteIDSubstr = $(this).attr("_id").substr(0, 2);
+                        dropActivo = esteID;
+                        dropActivoSubstr = esteIDSubstr;
+                        console.log("colisión con: " + esteIDSubstr);
+                      
+                        checkMatch();
+                }
+            });
+        }
+        
+        function pasada3(){
+        	animacion_salida($("#lugar2"),"desaparece",0,0);
+        	animacion_entrada($("#lugar3"),"default",0,0);
+            parpadea($("#drag3_1"),.6);
+            $("#drag3_1").draggable({
+                  revert: "invalid",
+                  cursor: "pointer",
+                  disabled: false,
+                  start: function( event, ui ) {
+
+                    var esteID = $(this).attr("_id");
+                    var esteIDSubstr = $(this).attr("_id").substr(0, 2);
+                    console.log("Drag seleccionado: " + esteIDSubstr);
+                    dragActivo = esteID;
+                    dragActivoSubstr = esteIDSubstr; 
+                  }
+            });
+            $("#lugar3").droppable({
+                accept: "#drag3_1",
+                drop: function(event, ui) {
+                        var esteID = $(this).attr("_id");
+                        var esteIDSubstr = $(this).attr("_id").substr(0, 2);
+                        dropActivo = esteID;
+                        dropActivoSubstr = esteIDSubstr;
+                        console.log("colisión con: " + esteIDSubstr);
+                      
+                        checkMatch();
+                }
+            });
+        }
+
+        function pasada4(){
+
+        	animacion_salida($("#lugar3"),"desaparece",0,0);
+        	animacion_entrada($("#lugar4"),"default",0,0);
+            parpadea($("#drag4_1"),.6);
+            $("#drag4_1").draggable({
+                  revert: "invalid",
+                  cursor: "pointer",
+                  disabled: false,
+                  start: function( event, ui ) {
+
+                    var esteID = $(this).attr("_id");
+                    var esteIDSubstr = $(this).attr("_id").substr(0, 2);
+                    console.log("Drag seleccionado: " + esteIDSubstr);
+                    dragActivo = esteID;
+                    dragActivoSubstr = esteIDSubstr; 
+                  }
+            });
+            $("#lugar4").droppable({
+                accept: "#drag4_1",
+                drop: function(event, ui) {
+                        var esteID = $(this).attr("_id");
+                        var esteIDSubstr = $(this).attr("_id").substr(0, 2);
+                        dropActivo = esteID;
+                        dropActivoSubstr = esteIDSubstr;
+                        console.log("colisión con: " + esteIDSubstr);
+                      
+                        checkMatch();
+                }
+            });
+        }
+
+        function pasada5(){
+        	animacion_salida($("#lugar4"),"desaparece",0,0);
+        	animacion_entrada($("#lugar5"),"default",0,0);
+            parpadea($("#drag5_1"),.6);
+            $("#drag5_1").draggable({
+                  revert: "invalid",
+                  cursor: "pointer",
+                  disabled: false,
+                  start: function( event, ui ) {
+
+                    var esteID = $(this).attr("_id");
+                    var esteIDSubstr = $(this).attr("_id").substr(0, 2);
+                    console.log("Drag seleccionado: " + esteIDSubstr);
+                    dragActivo = esteID;
+                    dragActivoSubstr = esteIDSubstr; 
+                  }
+            });
+
+            $("#lugar5").droppable({
+                accept: "#drag5_1",
+                drop: function(event, ui) {
+                        var esteID = $(this).attr("_id");
+                        var esteIDSubstr = $(this).attr("_id").substr(0, 2);
+                        dropActivo = esteID;
+                        dropActivoSubstr = esteIDSubstr;
+                        console.log("colisión con: " + esteIDSubstr);
+                      
+                        checkMatch();
+                }
+            });
+
+        }
+
+        function pasada6(){
+        	animacion_salida($("#lugar5"),"desaparece",0,0);
+        	animacion_entrada($("#lugar6"),"default",0,0);
+            parpadea($("#drag6_1"),.6);
+            $("#drag6_1").draggable({
+                  revert: "invalid",
+                  cursor: "pointer",
+                  disabled: false,
+                  start: function( event, ui ) {
+
+                    var esteID = $(this).attr("_id");
+                    var esteIDSubstr = $(this).attr("_id").substr(0, 2);
+                    console.log("Drag seleccionado: " + esteIDSubstr);
+                    dragActivo = esteID;
+                    dragActivoSubstr = esteIDSubstr; 
+                  }
+            });
+             $("#lugar6").droppable({
+                accept: "#drag6_1",
+                drop: function(event, ui) {
+                        var esteID = $(this).attr("_id");
+                        var esteIDSubstr = $(this).attr("_id").substr(0, 2);
+                        dropActivo = esteID;
+                        dropActivoSubstr = esteIDSubstr;
+                        console.log("colisión con: " + esteIDSubstr);
+                      
+                        checkMatch();
+                }
+            });
+        }
+        function mostrarFinal(){
+            console.log("Entra en mostrar Final");
+            animacion_entrada($("#retroBien"), "default", .7, 0);
+            parent.playAudio(23,500,terminarPantalla);
+            for (a = 1; a <= cuantasPiezas; a++) {
+                for (b = 1; b <= cuantaosLugares; b++) {
+                  dragsColocados[dragsColocados.length] = false;
+                
+                  animacion_salida($("#drag" + a + "_" + b), "desaparece", .5, 0);
+                  animacion_salida($("#lugar" + b), "desaparece", .5, 0);
+                }
+            }
+        }
+        pasada1();
+
+            function checkMatch(){
+
+                console.log('Entra check Match:',dropActivoSubstr,dragActivoSubstr);
+                console.log('contador',contador);
+                contador++;
+                var str_dropActivoSubstr = String(dropActivoSubstr);
+               var res_dropActivoSubstr = "";
+
+               var str_dragActivoSubstr = String(dragActivoSubstr);
+               var res_dragActivoSubstr = "";
+
+               if( str_dropActivoSubstr.startsWith("0")){
+                  res_dropActivoSubstr = str_dropActivoSubstr.substr(1,2);
+               }else{
+                  res_dropActivoSubstr = dropActivoSubstr;
+               }
+
+              // console.log('Sub string en Id:'+res_dropActivoSubstr);
+               if (str_dragActivoSubstr.startsWith("0")) {
+                    res_dragActivoSubstr = str_dragActivoSubstr.substr(1,2);
+               }else{
+                    res_dragActivoSubstr = dragActivoSubstr;
+               }
+
+               //console.log('lugar'+res_dropActivoSubstr);
+
+
+              var elLeft = parseInt($("#lugar"+res_dropActivoSubstr).css("left").substr(0, $("#lugar"+res_dropActivoSubstr).css("left").length - 2)) - 2 + "px";
+                   // console.log('elLeft', elLeft);
+              var elTop = parseInt($("#lugar"+res_dropActivoSubstr).css("top").substr(0, $("#lugar"+res_dropActivoSubstr).css("top").length - 2)) + "px";
+                  //  console.log('elTop', elTop);
+
+                $("#drag"+res_dragActivoSubstr+"_1").attr("_origenx",'');
+                $("#drag"+res_dragActivoSubstr+"_1").attr("_origeny",'');
+
+                $("#drag"+res_dragActivoSubstr+"_1").css({
+                    'left': elLeft ,
+                    'top': elTop
+                    
+                }); 
+
+                if( dropActivoSubstr == "01" && dragActivoSubstr == "01"){
+                    TweenMax.killTweensOf($("#drag1_1"));
+                    animacion_salida($("#imagen4"), "desaparece", 0);
+                    animacion_salida($("#drag1_1"), "desaparece", 0);
+                    animacion_entrada($("#pregunta"+dropActivoSubstr), "default", .7, 0);
+                    animacion_entrada($("#verdadero"+dropActivoSubstr), "default", .7, 0);
+                    animacion_entrada($("#falso"+dropActivoSubstr), "default", .7, 0);
+
+                    $("#verdadero"+dropActivoSubstr).click(function() {
+                        //TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $("#falso"+dropActivoSubstr).hide();
+                        animacion_entrada($("#retroContinuar01"), "default", .7, 0);
+
+                        parpadea($("#botonContinuar01"),0);
+                    });
+
+                    $("#falso"+dropActivoSubstr).click(function() {
+                        $(this).hide();
+                        $("#verdadero"+dropActivoSubstr).hide();
+                        animacion_entrada($("#retroReintentar01"), "default", .7, 0);
+                        parpadea($("#botonReintentar01"),0);
+                    });
+
+                     $("#botonReintentar01").click(function() {
+                       console.log('boton reintentar');
+                        //e.preventDefault();
+                        /* parent.stopAll();
+                         location.reload();*/
+                         $(this).hide();
+                         /*for (a = 1; a <= cuantasPiezas; a++) {
+                            for (b = 1; b <= cuantaosLugares; b++) {
+                              dragsColocados[dragsColocados.length] = false;
+                            
+                              animacion_salida($("#drag" + a + "_" + b), "desaparece", .5, 0);
+                              animacion_salida($("#lugar" + b), "desaparece", .5, 0);
+                            }
+                        }*/
+                        //animacion_salida($("#botonReintentar"+dropActivoSubstr), "desaparece", 0,0);
+                         animacion_salida($("#pregunta"+dropActivoSubstr), "desaparece", 0,0);
+                         animacion_salida($("#retroReintentar"+dropActivoSubstr), "desaparece",0,0);
+
+                        /*animacion_entrada($("#pregunta"+dropActivoSubstr), "default", .1, .5);
+                        animacion_entrada($("#verdadero"+dropActivoSubstr), "default", .5, 0);
+                        animacion_entrada($("#falso"+dropActivoSubstr), "default", .5, 0);*/
+                            checkMatch();
+
+                     });
+
+                     $("#botonContinuar"+dropActivoSubstr).click(function() {
+                        $(this).hide();
+                        pasada2();
+                         animacion_salida($("#retroContinuar"+dropActivoSubstr), "desaparece", 0);
+                         animacion_salida($("#pregunta"+dropActivoSubstr), "default", .7, 0);
+                         animacion_entrada($("#imagen5"), "default", .7, 0);
+                         /*animacion_salida($("#verdadero"+dropActivoSubstr), "default", .7, 0);
+                         animacion_salida($("#falso"+dropActivoSubstr), "default", .7, 0);*/
+                     });
+
+                }else if(dropActivoSubstr == "02" && dragActivoSubstr == "02"){
+
+
+                    TweenMax.killTweensOf($("#drag2_1"));
+                    //animacion_salida($("#imagen4"), "desaparece", 0);
+                    animacion_salida($("#drag2_1"), "desaparece", 0);
+                    animacion_entrada($("#pregunta"+dropActivoSubstr), "default", .7, 0);
+                    animacion_entrada($("#verdadero"+dropActivoSubstr), "default", .7, 0);
+                    animacion_entrada($("#falso"+dropActivoSubstr), "default", .7, 0);
+
+                    $("#verdadero"+dropActivoSubstr).click(function() {
+                        //TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $("#falso"+dropActivoSubstr).hide();
+                        animacion_entrada($("#retroContinuar"+dropActivoSubstr), "default", .7, 0);
+
+                        parpadea($("#botonContinuar"+dropActivoSubstr),0);
+                    });
+
+                    $("#falso"+dropActivoSubstr).click(function() {
+                        $(this).hide();
+                        $("#verdadero"+dropActivoSubstr).hide();
+                        animacion_entrada($("#retroReintentar"+dropActivoSubstr), "default", .7, 0);
+                        parpadea($("#botonReintentar"+dropActivoSubstr),0);
+                    });
+
+                     $("#botonReintentar"+dropActivoSubstr).click(function() {
+                       console.log('boton reintentar');
+                        /*e.preventDefault();
+                        
+                        parent.stopAll();
+                         location.reload();*/
+                         $(this).hide();
+                         animacion_salida($("#pregunta"+dropActivoSubstr), "desaparece", 0,0);
+                         animacion_salida($("#retroReintentar"+dropActivoSubstr), "desaparece",0,0);
+
+                        
+                            checkMatch();
+                     });
+
+                     $("#botonContinuar"+dropActivoSubstr).click(function() {
+                        $(this).hide();
+                        pasada3();
+                         animacion_salida($("#retroContinuar"+dropActivoSubstr), "desaparece", 0);
+                         animacion_salida($("#pregunta"+dropActivoSubstr), "default", .7, 0);
+                         animacion_entrada($("#imagen6"), "default", .7, 0);
+                         /*animacion_salida($("#verdadero"+dropActivoSubstr), "default", .7, 0);
+                         animacion_salida($("#falso"+dropActivoSubstr), "default", .7, 0);*/
+                     });
+                }else if(dropActivoSubstr == "03" && dragActivoSubstr == "03"){
+                    TweenMax.killTweensOf($("#drag3_1"));
+                    //animacion_salida($("#imagen4"), "desaparece", 0);
+                    animacion_salida($("#drag3_1"), "desaparece", 0);
+                    animacion_entrada($("#pregunta"+dropActivoSubstr), "default", .7, 0);
+                    animacion_entrada($("#verdadero"+dropActivoSubstr), "default", .7, 0);
+                    animacion_entrada($("#falso"+dropActivoSubstr), "default", .7, 0);
+
+                    $("#verdadero"+dropActivoSubstr).click(function() {
+                        //TweenMax.killTweensOf($(this));
+                        // $(this).hide();
+                        $(this).hide();
+                        $("#falso"+dropActivoSubstr).hide();
+                        animacion_entrada($("#retroReintentar"+dropActivoSubstr), "default", .7, 0);
+                        parpadea($("#botonReintentar"+dropActivoSubstr),0);
+                    });
+
+                    $("#falso"+dropActivoSubstr).click(function() {
+                        $(this).hide();
+                        $("#verdadero"+dropActivoSubstr).hide();
+                        animacion_entrada($("#retroContinuar"+dropActivoSubstr), "default", .7, 0);
+
+                        parpadea($("#botonContinuar"+dropActivoSubstr),0);
+
+                        
+                    });
+
+                     $("#botonReintentar"+dropActivoSubstr).click(function() {
+                       console.log('boton reintentar');
+                        /*e.preventDefault();
+                      
+                        parent.stopAll();
+                         location.reload();*/
+                         $(this).hide();
+                         animacion_salida($("#pregunta"+dropActivoSubstr), "desaparece", 0,0);
+                         animacion_salida($("#retroReintentar"+dropActivoSubstr), "desaparece",0,0);
+
+                        
+                            checkMatch();
+                     });
+
+                     $("#botonContinuar"+dropActivoSubstr).click(function() {
+                        $(this).hide();
+                        pasada4();
+                         animacion_salida($("#retroContinuar"+dropActivoSubstr), "desaparece", 0);
+                         animacion_salida($("#pregunta"+dropActivoSubstr), "default", .7, 0);
+                         animacion_entrada($("#imagen7"), "default", .7, 0);
+                         
+                     });
+
+                }else if(dropActivoSubstr == "04" && dragActivoSubstr == "04"){
+                    TweenMax.killTweensOf($("#drag4_1"));
+                    //animacion_salida($("#imagen4"), "desaparece", 0);
+                    animacion_salida($("#drag4_1"), "desaparece", 0);
+                    animacion_entrada($("#pregunta"+dropActivoSubstr), "default", .7, 0);
+                    animacion_entrada($("#verdadero"+dropActivoSubstr), "default", .7, 0);
+                    animacion_entrada($("#falso"+dropActivoSubstr), "default", .7, 0);
+
+                    $("#verdadero"+dropActivoSubstr).click(function() {
+                        //TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $("#falso"+dropActivoSubstr).hide();
+                        animacion_entrada($("#retroContinuar"+dropActivoSubstr), "default", .7, 0);
+
+                        parpadea($("#botonContinuar"+dropActivoSubstr),0);
+                    });
+
+                    $("#falso"+dropActivoSubstr).click(function() {
+                        $(this).hide();
+                        $("#verdadero"+dropActivoSubstr).hide();
+                        animacion_entrada($("#retroReintentar"+dropActivoSubstr), "default", .7, 0);
+                        parpadea($("#botonReintentar"+dropActivoSubstr),0);
+                    });
+
+                     $("#botonReintentar"+dropActivoSubstr).click(function() {
+                       console.log('boton reintentar');
+                        /*e.preventDefault();
+                      
+                        parent.stopAll();
+                         location.reload();*/
+                         $(this).hide();
+                         animacion_salida($("#pregunta"+dropActivoSubstr), "desaparece", 0,0);
+                         animacion_salida($("#retroReintentar"+dropActivoSubstr), "desaparece",0,0);
+
+                       
+                            checkMatch();
+                     });
+
+                     $("#botonContinuar"+dropActivoSubstr).click(function() {
+                        $(this).hide();
+                        pasada5();
+                         animacion_salida($("#retroContinuar"+dropActivoSubstr), "desaparece", 0);
+                         animacion_salida($("#pregunta"+dropActivoSubstr), "default", .7, 0);
+                         animacion_entrada($("#imagen8"), "default", .7, 0);
+                         
+                     });
+                }else if(dropActivoSubstr == "05" && dragActivoSubstr == "05"){
+                    TweenMax.killTweensOf($("#drag5_1"));
+                    //animacion_salida($("#imagen4"), "desaparece", 0);
+                    animacion_salida($("#drag5_1"), "desaparece", 0);
+                    animacion_entrada($("#pregunta"+dropActivoSubstr), "default", .7, 0);
+                    animacion_entrada($("#verdadero"+dropActivoSubstr), "default", .7, 0);
+                    animacion_entrada($("#falso"+dropActivoSubstr), "default", .7, 0);
+
+                    $("#verdadero"+dropActivoSubstr).click(function() {
+                        //TweenMax.killTweensOf($(this));
+                        $(this).hide();
+                        $("#falso"+dropActivoSubstr).hide();
+                        animacion_entrada($("#retroContinuar"+dropActivoSubstr), "default", .7, 0);
+
+                        parpadea($("#botonContinuar"+dropActivoSubstr),0);
+                    });
+
+                    $("#falso"+dropActivoSubstr).click(function() {
+                        $(this).hide();
+                        $("#verdadero"+dropActivoSubstr).hide();
+                        animacion_entrada($("#retroReintentar"+dropActivoSubstr), "default", .7, 0);
+                        parpadea($("#botonReintentar"+dropActivoSubstr),0);
+                    });
+
+                     $("#botonReintentar"+dropActivoSubstr).click(function() {
+                       console.log('boton reintentar');
+                        //e.preventDefault();
+                       
+                         //parent.stopAll();
+                         //location.reload();
+                         $(this).hide();
+                         animacion_salida($("#pregunta"+dropActivoSubstr), "desaparece", 0,0);
+                         animacion_salida($("#retroReintentar"+dropActivoSubstr), "desaparece",0,0);
+
+                        
+                            checkMatch();
+                     });
+
+                     $("#botonContinuar"+dropActivoSubstr).click(function(e) {
+                        $(this).hide();
+                        pasada6();
+                         animacion_salida($("#retroContinuar"+dropActivoSubstr), "desaparece", 0);
+                         animacion_salida($("#pregunta"+dropActivoSubstr), "default", .7, 0);
+                         animacion_entrada($("#imagen9"), "default", .7, 0);
+                         
+                     });
+                }else if(dropActivoSubstr == "06" && dragActivoSubstr == "06"){
+                    TweenMax.killTweensOf($("#drag6_1"));
+                    //animacion_salida($("#imagen4"), "desaparece", 0);
+                    animacion_salida($("#drag6_1"), "desaparece", 0);
+                    animacion_entrada($("#pregunta"+dropActivoSubstr), "default", .7, 0);
+                    animacion_entrada($("#verdadero"+dropActivoSubstr), "default", .7, 0);
+                    animacion_entrada($("#falso"+dropActivoSubstr), "default", .7, 0);
+
+                    $("#verdadero"+dropActivoSubstr).click(function() {
+                        //TweenMax.killTweensOf($(this));
+                         $(this).hide();
+                         $("#falso"+dropActivoSubstr).hide();
+                       animacion_entrada($("#retroReintentar"+dropActivoSubstr), "default", .7, 0);
+                        parpadea($("#botonReintentar"+dropActivoSubstr),0);
+                    });
+
+                    $("#falso"+dropActivoSubstr).click(function() {
+                         
+                         $("#verdadero"+dropActivoSubstr).hide();
+                        $("#falso"+dropActivoSubstr).hide();
+                        animacion_entrada($("#retroContinuar"+dropActivoSubstr), "default", .7, 0);
+
+                        parpadea($("#botonContinuar"+dropActivoSubstr),0);
+
+
+                        
+                    });
+
+                     $("#botonReintentar"+dropActivoSubstr).click(function(e) {
+                       console.log('boton reintentar');
+                        /*e.preventDefault();
+                      
+                        parent.stopAll();
+                         location.reload();*/
+                         $(this).hide();
+                         animacion_salida($("#pregunta"+dropActivoSubstr), "desaparece", 0,0);
+                         animacion_salida($("#retroReintentar"+dropActivoSubstr), "desaparece",0,0);
+
+                        
+                            checkMatch();
+                     });
+
+                     $("#botonContinuar"+dropActivoSubstr).click(function(e) {
+                        $(this).hide();
+                         mostrarFinal();
+                         animacion_salida($("#retroContinuar"+dropActivoSubstr), "desaparece", 0);
+                         animacion_salida($("#pregunta"+dropActivoSubstr), "default", .7, 0);
+                         animacion_entrada($("#imagen10"), "default", .7, 0);
+                         
+                     });
+                }
+            }
+        }
+        preload();
+
+    });
+
+</script>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Language" content="es" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase-database.js"></script>
+
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+
+    <script src="js/checkMobile.js"></script>
+    <script src="js/TweenMax.js"></script>
+    <script src="js/Buzz.min.js"></script>
+    <script src="js/Audios.min.js"></script>
+    <script src="js/Fancybox.js"></script>
+    <script src="js/Configuration.js"></script>
+    <script src="js/SCORM_API_wrapper.min.js"></script>
+    <script src="js/Conection.min.js"></script>
+    <script src="js/Time.min.js"></script>
+    <script src="js/mCustomScrollbar.min.js"></script>
+    <script src="js/Tracking.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/browserDct.min.js"></script>
+    <script src="js/spdDct.min.js"></script>
+    <script src="js/ApiI4L.min.js"></script>
+    <link rel="stylesheet" href="css/Reset.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="css/Template.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/Fancybox.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="css/mCustomScrollbar.min.css" type="text/css" charset="utf-8" />
+    <title>eLearning</title>
+</head>
+<script src="js/Adapt.js"></script>
+
+<body onLoad="resetTimer()" onresize="loadContent()">
+    <div id="box">
+        <div id="content"></div>
+        <div id="menuBar" class="menu">
+            <!-- <div id="backBotones" class="btnNav back_botones"><img src="images/back_botones.png"></img></div> -->
+
+            <div id="btnTemario" class="btnNav btnNavOver boton_temario"><img src="images/boton_temario.png"></img>
+            </div>
+            <!-- <div id="btnExit" class="btnNav btnNavOver boton_exit" style="display:none;"><img src="images/boton_salir.png"></img>
+			</div> -->
+            <div id="btnAudio" class="btnNav btnNavOver boton_audio"><img src="images/boton_audio.png"></img>
+            </div>
+            <div id="btnReload" class="btnNav btnNavOver boton_reload"><img src="images/boton_actualizar.png"></img>
+            </div>
+            <!-- <div id="btnHelp" class="btnNav btnNavOver nav-naranja"><i class="fa fa-question"></i></div> -->
+            <!-- <div id="btnPrint" class="btnNav btnNavOver nav-naranja"><i class="fa fa-print"></i></div> -->
+
+            <div id="btnPrev" class="btnNav btnNavOver boton_prev"><img src="images/boton_atras.png"></img>
+            </div>
+            <div id="btnNext" class="btnNav btnNavOver boton_next"><img src="images/boton_adelante.png"></img>
+            </div>
+        </div>
+
+        <div id="progressBar">
+            <div id="progress"></div>
+            <div id="progressDatos"></div>
+        </div>
+
+        <div id="temario" class="topics">
+            <div id="btnCerrarTemario" style="display:none;"><i class="fa fa-angle-double-right"></i></div>
+            <div id="temarioTitle"><span>TEMARIO</span></div>
+            <div id="items">
+            <div class="tema"><span>TMS SMER</span></div>
+                <!-- item# es la palomita que se activa cuando termina de ver la pantalla -->
+                <!-- _id=# es el link pag de donde comienza esa seccion -->
+                <div id="item1" _ID="0" class="linkPage"><i class="fa fa-square-o"></i><span>Bienvenida</span></div>
+                <div id="item2" _ID="1" class="linkPage"><i class="fa fa-square-o"></i><span>Guía de navegación</span></div>
+                <div id="item3" _ID="2" class="linkPage"><i class="fa fa-square-o"></i><span>Objetivo</span></div>
+                <div id="item4" _ID="3" class="linkPage"><i class="fa fa-square-o"></i><span>Significado HSE</span></div>
+                <div id="item5" _ID="4" class="linkPage"><i class="fa fa-square-o"></i><span>Política HSE</span></div>                
+                <div id="item6" _ID="5" class="linkPage"><i class="fa fa-square-o"></i><span>Principios de seguridad</span></div>
+                <div id="item7" _ID="6" class="linkPage"><i class="fa fa-square-o"></i><span>Reglas de salvación de vidas</span></div>                
+                <div id="item8" _ID="7" class="linkPage"><i class="fa fa-square-o"></i><span>Actividad de reforamiento</span></div>
+                <div id="item9" _ID="8" class="linkPage"><i class="fa fa-square-o"></i><span>Un lenguaje común</span></div>
+                <div id="item11" _ID="9" class="linkPage"><i class="fa fa-square-o"></i><span>Peligro</span></div>
+                <div id="item13" _ID="11" class="linkPage"><i class="fa fa-square-o"></i><span>Riesgo</span></div>
+                <div id="item14" _ID="13" class="linkPage"><i class="fa fa-square-o"></i><span>Actos inseguros/actividad</span></div>
+                <div id="item17" _ID="15" class="linkPage"><i class="fa fa-square-o"></i><span>Condiciones inseguras</span></div>
+                <div id="item19" _ID="17" class="linkPage"><i class="fa fa-square-o"></i><span>Accidente</span></div>
+                <div id="item20" _ID="19" class="linkPage"><i class="fa fa-square-o"></i><span>Incidente</span></div>
+                <div id="item21" _ID="20" class="linkPage"><i class="fa fa-square-o"></i><span>Video</span></div>
+                <div id="item24" _ID="21" class="linkPage"><i class="fa fa-square-o"></i><span>Reporte de accidentes</span></div>
+                <div id="item26" _ID="24" class="linkPage"><i class="fa fa-square-o"></i><span>Reportes rápidos de actos y condiciones inseguras </span></div>
+                <div id="item27" _ID="26" class="linkPage"><i class="fa fa-square-o"></i><span>Higiene industrial</span></div>
+                <div id="item29" _ID="27" class="linkPage"><i class="fa fa-square-o"></i><span>Sistema Globalmente Armonizado (SGA)</span></div>
+                <div id="item30" _ID="29" class="linkPage"><i class="fa fa-square-o"></i><span>video</span></div>
+                <div id="item32" _ID="30" class="linkPage"><i class="fa fa-square-o"></i><span>Medio ambiente</span></div>
+                <div id="item33" _ID="32" class="linkPage"><i class="fa fa-square-o"></i><span>Fuentes generadoras</span></div>
+                <div id="item34" _ID="33" class="linkPage"><i class="fa fa-square-o"></i><span>Cumplimiento legal y corporativo</span></div>
+                <div id="item36" _ID="34" class="linkPage"><i class="fa fa-square-o"></i><span>Escenarios de emergencia</span></div>
+                <div id="item37" _ID="36" class="linkPage"><i class="fa fa-square-o"></i><span>Triangulo del fuego</span></div>
+                <div id="item38" _ID="37" class="linkPage"><i class="fa fa-square-o"></i><span>Clases de fuego</span></div>
+                <div id="item39" _ID="38" class="linkPage"><i class="fa fa-square-o"></i><span>Escenario - incendio</span></div> 
+                <div id="item45" _ID="39" class="linkPage"><i class="fa fa-square-o"></i><span>Salud ocupacional</span></div> 
+                <div id="item47" _ID="45" class="linkPage"><i class="fa fa-square-o"></i><span>Síntomas del COVID 19</span></div> 
+                <div id="item48" _ID="47" class="linkPage"><i class="fa fa-square-o"></i><span>Diagramas de emergencias</span></div>                
+                <div id="item48" _ID="48" class="linkPage"><i class="fa fa-square-o"></i><span>Cierre</span></div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="activar_audio">
+        <img id="cargando_audios" class="sub_element" src="images/cargando.gif" />
+        <div id="activar_audio_int" class="sub_element">
+            <img id="activar_audio_img1" class="sub_element" src="images/activar_audio1.png" />
+            <img id="activar_audio_img2" class="sub_element" src="images/activar_audio2.png" />
+            <img id="activar_audio_in" class="sub_element" src="images/activar_audio_in.png" />
+            <img id="activar_audio_si" class="sub_element" src="images/activar_audio_si.png" />
+            <img id="activar_audio_no" class="sub_element" src="images/activar_audio_no.png" />
+        </div>
+    </div>
+    <div id="bloqueo"><img src="images/gira.png" /></div>
+
+</body>
+
+</html>

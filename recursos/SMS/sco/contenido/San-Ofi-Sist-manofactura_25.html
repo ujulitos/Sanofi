@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="es" />
+
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/Time.js"></script>
+    <script src="js/Animations.min.js"></script>
+    <script src="js/bounce.min.js"></script>
+    <link rel="stylesheet" href="css/Reset.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
+    <title>Slide 1</title>
+</head>
+
+<body onresize="location.reload()">
+    <div id="contenido">
+              
+
+        <img id="fondo" class="element" _origenx="0" _origeny="0" src="images/San-Ofi-Sist-manofactura_25/fondo.png"></img>
+        <img id="imagen1" class="element" _origenx="0" _origeny="0" src="images/San-Ofi-Sist-manofactura_25/img01.png"></img>
+        <img id="imagen2" class="element" _origenx="0" _origeny="0" src="images/San-Ofi-Sist-manofactura_25/img02.png"></img>
+        
+        <!-- <img id="imagen3" class="element" _origenx="0" _origeny="0" src="images/San-Ofi-Sist-manofactura_25/img03.png"></img> -->
+
+       
+
+        <img id="pop1" class="element" _origenx="13.099"  _origeny="202.518" src="images/San-Ofi-Sist-manofactura_25/pop1.png"></img>
+        <img id="pop2" class="element" _origenx="184.888" _origeny="203.194" src="images/San-Ofi-Sist-manofactura_25/pop2.png"></img>
+        <img id="pop3" class="element" _origenx="356.847" _origeny="202.518" src="images/San-Ofi-Sist-manofactura_25/pop3.png"></img>
+        <img id="pop4" class="element" _origenx="528.821" _origeny="203.194" src="images/San-Ofi-Sist-manofactura_25/pop4.png"></img>
+        <img id="pop5" class="element" _origenx="699.79 " _origeny="202.518" src="images/San-Ofi-Sist-manofactura_25/pop5.png"></img>
+        <img id="pop6" class="element" _origenx="871.579" _origeny="203.194" src="images/San-Ofi-Sist-manofactura_25/pop6.png"></img>
+        
+        
+        <img id="boton1" class="element" _origenx="13.099"  _origeny="202.518" src="images/San-Ofi-Sist-manofactura_25/boton1.png"></img>       
+        <img id="boton2" class="element" _origenx="184.888" _origeny="203.194" src="images/San-Ofi-Sist-manofactura_25/boton2.png"></img>        
+        <img id="boton3" class="element" _origenx="356.847" _origeny="202.518" src="images/San-Ofi-Sist-manofactura_25/boton3.png"></img>        
+        <img id="boton4" class="element" _origenx="528.821" _origeny="203.194" src="images/San-Ofi-Sist-manofactura_25/boton4.png"></img>
+        <img id="boton5" class="element" _origenx="699.79 " _origeny="202.518" src="images/San-Ofi-Sist-manofactura_25/boton5.png"></img>
+        <img id="boton6" class="element" _origenx="871.579" _origeny="203.194" src="images/San-Ofi-Sist-manofactura_25/boton6.png"></img>
+       
+        <!-- <img id="boton5" class="element" _origenx="142.669 " _origeny="223.887" src="images/San-Ofi-Sist-manofactura_25/boton5.png"></img> -->
+         
+        <!-- cargador -->
+        <img id="cargando" class="cargando" src="images/cargando.gif"></img>
+        <canvas id="canvas_id"></canvas>
+
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+
+        cacularEscala();
+        ajustarEscenario();
+
+        function preload() {
+            animacion_entrada($("#cargando"), "default", .2, 0);
+            var preload = new createjs.LoadQueue();
+            preload.addEventListener("complete", iniciaCargador);
+            $.each($('.element'), function() {
+                preload.loadFile($("#" + this.id).attr('src'));
+                //console.log($("#" + this.id).attr('src'));
+            });
+        }
+
+        function iniciaCargador(event) {
+            console.log('load complete');
+            $.each($('.element'), function() {
+                inicializar($("#" + this.id));
+            });
+            $("#cargando").show();
+            $("#cargando").css({
+                'opacity': '1'
+            });
+            animacion_salida($("#cargando"), "desaparece", 0, muestraContenido);
+        }
+
+        var visto1 = false;
+        var visto2 = false;
+        var visto3 = false;
+        var visto4 = false;
+        var visto5 = false;
+        var visto6 = false;
+
+        function muestraContenido() {
+           
+           // animacion_entrada($("#fondo"), "default", 0.7, 0.5);
+            animacion_entrada($("#imagen1"), "izq_der", 0.7, 0.5);
+            animacion_entrada($("#imagen2"), "arriba_abajo", 0.7, 0.5);
+          
+            parent.playAudio(122, 500, terminaAudio9);       
+                                     
+        }
+        
+        
+        function terminaAudio9(){
+           parent.playAudio(123, 500, terminaAudio123);  //supervisor del area  
+            animacion_entrada($("#boton1"), "arriba_abajo", .7, 0);
+         } 
+          function terminaAudio123(){           
+              parent.playAudio(124, 500, terminaAudio124);
+              animacion_entrada($("#boton2"), "arriba_abajo", .7, 0);  
+         }
+         function terminaAudio124(){           
+              parent.playAudio(125, 500, terminaAudio125);  
+              animacion_entrada($("#boton3"), "arriba_abajo", .7, 0); 
+         }
+         function terminaAudio125(){           
+              parent.playAudio(126, 500, terminaAudio126);  
+              animacion_entrada($("#boton4"), "arriba_abajo", .7, 0); 
+         }
+         function terminaAudio126(){           
+              parent.playAudio(127, 500, terminaAudio127);  
+              animacion_entrada($("#boton5"), "arriba_abajo", .7, 0); 
+         }
+         function terminaAudio127(){           
+              parent.playAudio(128, 500, terminaAudio128); 
+              animacion_entrada($("#boton6"), "arriba_abajo", .7, 0);  
+         }
+         
+
+          function terminaAudio128(){           
+             parpadea($("#boton1"), .5);
+         }
+        
+          ///////////////// botón 1 ////////////////
+          // $("#boton1").css('cursor','pointer');
+        $("#boton1").click(function() {
+            if ($(this).css('cursor') == 'pointer') {
+                TweenMax.killTweensOf($(this));
+                 // TweenMax.killTweensOf($("#boton1, #boton2, #boton3, #boton4"));
+                 $(this).hide();
+                $(this).css({
+                    //'cursor': 'default',
+                    'opacity': '1'
+                });
+                visto1=true;               
+                parent.playAudio(129, 1000,terminaAudio129);
+               animacion_entrada($("#pop1"), "default", .5, 0);               
+              //parpadea($("#boton2"), .5);
+               console.log(visto1);
+             //parent.goPage(5);
+            }
+        });
+
+         function terminaAudio129(){
+            //animacion_salida($("#pop1"), "desaparece", 0);
+             parpadea($("#boton2"), .5);
+              vistos();
+         }
+       // $("#boton2").css('cursor','pointer');
+           $("#boton2").click(function() {
+            if ($(this).css('cursor') == 'pointer') {
+                TweenMax.killTweensOf($(this));
+               // TweenMax.killTweensOf($("#boton1, #boton2, #boton3, #boton4"));
+                 $(this).hide();
+                $(this).css({
+                   // 'cursor': 'default',
+                    'opacity': '1'
+                });
+                visto2=true;               
+                parent.playAudio(130, 1000,terminaAudio130);
+                animacion_entrada($("#pop2"), "default", .5, 0);                
+                //parpadea($("#boton2"), .5);
+                console.log(visto2);
+                  //parent.goPage(7); 
+            }
+        });
+           function terminaAudio130(){
+             //animacion_salida($("#pop2"), "desaparece", 0);
+            parpadea($("#boton3"), .5);
+             vistos();
+         }
+        
+        // $("#boton3").css('cursor','pointer');
+           $("#boton3").click(function() {
+            if ($(this).css('cursor') == 'pointer') {
+                TweenMax.killTweensOf($(this));
+                //TweenMax.killTweensOf($("#boton1, #boton2, #boton3, #boton4"));
+               $(this).hide();
+                $(this).css({
+                   // 'cursor': 'default',
+                    'opacity': '1'
+                });
+                visto3=true;               
+                   // parent.goPage(9);
+                parent.playAudio(131, 1000,terminaAudio131);
+                 animacion_entrada($("#pop3"), "default", .5, 0);
+                 //parpadea($("#boton2"), .5);
+                console.log(visto3);
+               
+            }
+        });
+        
+        function terminaAudio131(){
+           // animacion_salida($("#pop3"), "desaparece", 0);
+              parpadea($("#boton4"), .5);
+               vistos();
+             //terminarPantalla();
+         }
+         // $("#boton4").css('cursor','pointer');
+        $("#boton4").click(function() {
+            if ($(this).css('cursor') == 'pointer') {
+                TweenMax.killTweensOf($(this));
+                //TweenMax.killTweensOf($("#boton1, #boton2, #boton3, #boton4"));
+               $(this).hide();
+                $(this).css({
+                    //'cursor': 'default',
+                    'opacity': '1'
+                });
+                visto4=true;               
+                   // parent.goPage(9);
+                 parent.playAudio(132, 1000,terminaAudio132);
+                 animacion_entrada($("#pop4"), "default", .5, 0);
+                //parpadea($("#boton2"), .5);
+                console.log(visto3);
+               
+            }
+        });
+
+
+        function terminaAudio132(){
+             parpadea($("#boton5"), .5);
+              //animacion_salida($("#pop4"), "desaparece", 0);
+              vistos();
+             
+         }
+         // $("#boton5").css('cursor','pointer');
+         $("#boton5").click(function() {
+            if ($(this).css('cursor') == 'pointer') {
+                TweenMax.killTweensOf($(this));
+                $(this).hide();
+                $(this).css({
+                    'cursor': 'default',
+                    'opacity': '1'
+                });
+                visto5=true;
+                //vistos();
+                parent.playAudio(133, 1000,terminaAudio133);
+                 animacion_entrada($("#pop5"), "default", .5, 0);
+                //parpadea($("#boton2"), .5);
+                console.log(visto3);
+               
+            }
+        });
+
+             function terminaAudio133(){
+                 parpadea($("#boton6"), .5);
+                  //animacion_salida($("#pop5"), "desaparece", 0);
+                  vistos();
+                 
+             }
+            //  $("#boton6").css('cursor','pointer');
+              $("#boton6").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    visto6=true;
+                    //vistos();
+                    parent.playAudio(134, 1000,terminaAudio134);
+                     animacion_entrada($("#pop6"), "default", .5, 0);
+                    //parpadea($("#boton2"), .5);
+                    console.log(visto3);
+                   
+                }
+            });
+
+                         
+
+            function terminaAudio134(){
+                    // parpadea($("#pop6"), .5);
+                     // animacion_salida($("#pop7"), "desaparece", 0);
+                      vistos();
+                     
+                 }
+
+        function vistos(){
+             if(visto1==true && visto2 ==true && visto3==true && visto4==true && visto5==true && visto6==true){
+            terminarPantalla();
+            console.log("ya los vi todos")
+            TweenMax.killTweensOf($("#boton1, #boton2, #boton3, #boton4, #boton5,#boton6"));
+             }
+        }
+
+        ///////////////// botonIniciar ////////////////
+        // $("#botonIniciar").click(function() {
+        //     terminarPantalla();
+        //     parent.nextPage();
+        // });
+
+
+
+        preload();
+
+    });
+
+</script>
+
+</html>

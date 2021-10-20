@@ -1,0 +1,12 @@
+ /*Copyright Ideas4Learning 2016. http.//ideas4learning.com */
+
+ #temarioTitle {
+     font-size: 12px;
+ }
+ .linkPage, .tema {
+     font-size: 10px;
+     font-weight: 500;
+ }
+ .tema {
+     font-weight: 600;
+ }

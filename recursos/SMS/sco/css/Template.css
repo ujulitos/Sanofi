@@ -1,0 +1,468 @@
+/* Copyright Irek Mendieta 2014. contact: irekmv@gmail.com */
+
+@font-face {
+    font-family: "klavika";
+    src: url(../fonts/klavika_regular-webfont.woff) format("truetype");
+}
+
+body,
+html {
+    overflow: hidden;
+    color: #f3f3f3;
+}
+
+body {
+    background: transparent;
+}
+
+#bloqueo {
+    background-color: #242424;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+#bloqueo img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -150px;
+}
+
+#cargando_audios {
+    position: absolute;
+    top: 48%;
+    left: 45%;
+    margin-top: auto;
+    margin-left: auto;
+}
+
+#activar_audio {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: none;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+#activar_audio_int {
+    width: 642px;
+    height: 318px;
+    left: 50%;
+    top: 50%;
+    margin: -160px 0 0 -300px;
+}
+
+#activar_audio_img1,
+#activar_audio_img2 {
+    display: none;
+    left: 60px;
+}
+
+#activar_audio_in,
+#activar_audio_si,
+#activar_audio_no {
+    bottom: 50px;
+    transition: .5s ease;
+    cursor: pointer;
+    display: none;
+}
+
+#activar_audio_in:hover {
+    transform: rotate(0deg) scale(1.1);
+}
+
+#activar_audio_si:hover {
+    transform: rotate(-0deg) scale(1.1);
+}
+
+#activar_audio_no:hover {
+    transform: rotate(0deg) scale(1.1);
+}
+
+#activar_audio_in {
+    margin-left: 210px;
+}
+
+#activar_audio_si {
+    margin-left: 170px;
+}
+
+#activar_audio_no {
+    margin-left: 360px;
+}
+
+.sub_element {
+    position: absolute;
+    margin: 0px;
+}
+
+.bg1 {
+    background-color: #D5D9DB;
+}
+
+#content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url("../images/fondo_general.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+#box {
+    position: absolute;
+    background-color: #FFF;
+    left: 50%;
+    top: 50%;
+    /*para Firefox*/
+    -moz-border-radius: 0px;
+    /*para Safari y Chrome*/
+    -webkit-border-radius: 0px;
+    /* para Opera */
+    border-radius: 0px;
+    box-shadow: 0px 0px 5px #000;
+    overflow: hidden;
+}
+
+#com {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+#progressBar {
+    /*top: 5px;*/
+	margin-left: -60px !important;	
+    position: absolute;
+    width: 22%;
+    background: #FFF;
+    /*bottom: 10px;*/
+    /*position: absolute;*/
+    /*margin: 0px;*/
+    /* box-shadow: 0px 0px 5px #000; */
+    padding: 2px;
+    height: 9px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 5px;
+    border: 1px #000 solid;
+     /* -webkit-clip-path: polygon(0 0, 96% 0, 100% 100%, 10% 100%);*/
+/*    clip-path: polygon(0 0, 100% 0, 96% 100%, 0% 100%);*/
+/*    clip-path: polygon(4% 0, 100% 0%, 96% 100%, 0% 100%);*/
+}
+
+#progress {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #003a70;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+#progressDatos {
+    font-family: "Lato";
+    font-size: 13px;
+    font-weight: 800;
+    color: white;
+    position: absolute;
+    top: 0px;
+    left: -55px;
+    padding: 0px;
+}
+
+
+#menuBar {
+    position: relative;
+    bottom: 0px;
+    background: hsla(0, 0%, 0%, 0.5);
+    /*background: url("../images/bg_toolbar.png") repeat-y;*/
+    background: transparent;
+    /*background-size: 100% 100%;*/
+    left: 0;
+}
+
+.oculto {
+    display: none;
+}
+
+/* Estilo para Desktop */
+
+#menuBar {
+    height: 41px;
+    width: 100%;
+    /*right: 0px;*/
+    bottom: 38px;
+    padding-left: 33px;
+}
+
+/* Estilo para Movil */
+
+.btnNav {
+    position: absolute;
+    /*cursor: pointer;*/
+    /* transition: all .15s ease-in-out;
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;*/
+}
+
+.btnNavOver:hover {
+    /* transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);*/
+}
+
+.back_botones {
+    bottom: 28px;
+    left: 3px;
+    width: 60px;
+    height: 59px;
+}
+
+.nav-naranja {
+    background-color: #F58426 !important;
+}
+
+.nav-verde {
+    background-color: #C3D600 !important;
+}
+
+.boton_temario {
+    top: -25px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+}
+
+.boton_exit {
+    top: 14px;
+    left: 80px;
+    width: 60px;
+    height: 60px;
+}
+
+.boton_audio,
+.boton_audio_off {
+    top: -25px;
+    left: 155px;
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+}
+
+.boton_reload {
+    top: -25px;
+    left: 90px;
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+}
+
+.boton_subts {
+    top: -30px;
+    left: 390px;
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+}
+
+#btnSubts_on {
+    display: none;
+}
+
+.boton_prev {
+    top: -25px;
+    left: 880px;
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+
+     
+}
+
+.boton_next {
+    top: -25px;
+    left: 955px;
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+}
+
+#temario {
+    font-family: 'klavika';
+    position: absolute;
+    height: 100%;
+    width: 33%;
+    background: #FFF;
+    top: 0px;
+    left: -45.5%;
+    box-shadow: 0px 0px 5px #000;
+}
+
+.logoC>img,
+.logoC2>img {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#btnCerrarTemario {
+    font-size: 1.5em;
+    background: #FFAC00;
+    position: absolute;
+    right: -22px;
+    top: 13px;
+    text-align: right;
+    padding: 4px;
+    padding-left: 10px;
+    border-radius: 0px 4px 4px 0px;
+    -moz-border-radius: 0px 4px 4px 0px;
+    -webkit-border-radius: 0px 4px 4px 0px;
+    border: 0px solid #000000;
+    box-shadow: 0px 0px 5px #000;
+}
+
+#temarioTitle {
+    position: relative;
+    background: #00bcec;
+    margin: 0;
+    font-size: 25px;
+    /* font-weight: 600; */
+    width: 100%;
+    height: 7%;
+}
+
+#temarioTitle span {
+    position: absolute;
+    width: 87.5%;
+    margin-left: 12.5%;
+    margin-top: 2%;
+    text-align: center;
+    color: #FFF;
+}
+
+#items {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+}
+
+.linkPage,
+.tema {
+    position: relative;
+    padding: 4px 0 4px 22%;
+    margin-bottom: 0px;
+    margin-top: 5px;
+    font-size: 13px;
+    /* font-weight: 600; */
+    color: #264653;
+}
+
+.tema {
+    padding: 4px 0 4px 18%;
+    color: #000;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+.indice {
+    padding: 5px 0 5px 27%;
+    color: #000;
+    /* font-weight: 600; */
+    font-size: 12px;
+}
+
+
+#items i {
+    color: #C1292E;
+    font-weight: 800;
+    margin-right: 10px;
+}
+
+.linkactivo:hover {
+   /* background-color: rgb(244, 206, 220);*/
+    background-color:#ffe8bb;
+    /* color: #FFF; */
+    cursor: pointer;
+}
+
+/* Estilo Mobil */
+
+/*
+.mobile #menuBar{
+    position: fixed;
+    bottom: -38px;
+    left: 0;
+    padding: 0;
+    width: 100%;
+    height: 38px;
+}
+.mobile .btnNav{
+    position: fixed;
+    margin-top: -38PX;
+}
+.mobile #btnNext{
+    padding-right: 2px;
+    padding-top: 2px;
+    right: 0%;
+}
+.mobile #btnPrev{
+    left: 0px;
+    padding-left: 2px;
+    padding-top: 2px;
+}
+.mobile #progressBar{
+    position:absolute;
+    width: 100%;
+    background: #FFF;
+    top: 0px;
+}
+.mobile #progress{
+  height: 100%;
+  width: 100%;
+  background-color: #F58426;
+    height: 2px;
+}
+.mobile #progressDatos{
+    display: none;
+}
+.mobile #content{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.mobile #btnExit{
+    display:none;
+}
+.mobile #btnHome{
+    display:none;
+}
+.mobile #btnReload{
+    display:none;
+}
+
+.mobile #btnAudio{
+    display:none;
+}
+.mobile #btnHelp{
+    display:none;
+}
+.mobile #btnTemario{
+    display:none;
+}
+.posV .mobile #bloqueo{
+    display: block;
+}
+.posH .mobile #bloqueo{
+    display: none;
+
+}*/

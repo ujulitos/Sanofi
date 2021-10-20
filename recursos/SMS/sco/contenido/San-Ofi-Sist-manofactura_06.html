@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="es" />
+
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/Time.js"></script>
+    <script src="js/Animations.min.js"></script>
+    <script src="js/bounce.min.js"></script>
+    <link rel="stylesheet" href="css/Reset.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
+    <title>Slide 1</title>
+</head>
+
+<body onresize="location.reload()">
+    <div id="contenido">      
+        <img id="imagen1" class="element" _origenx="0" _origeny="0" src="images/San-Ofi-Sist-manofactura_06/img01.png"></img>
+        <img id="imagen2" class="element" _origenx="0" _origeny="0" src="images/San-Ofi-Sist-manofactura_06/img02.png"></img>
+        <img id="imagen3" class="element" _origenx="0" _origeny="0" src="images/San-Ofi-Sist-manofactura_06/img03.png"></img>
+        <img id="imagen4" class="element" _origenx="0" _origeny="0" src="images/San-Ofi-Sist-manofactura_06/img04.png"></img>
+        <img id="imagen5" class="element" _origenx="0" _origeny="0" src="images/San-Ofi-Sist-manofactura_06/img05.png"></img>
+        <img id="imagen6" class="element" _origenx="0" _origeny="0" src="images/San-Ofi-Sist-manofactura_06/img06.png"></img>
+        <img id="imagen7" class="element" _origenx="0" _origeny="0" src="images/San-Ofi-Sist-manofactura_06/img07.png"></img>
+        <img id="imagen8" class="element" _origenx="0" _origeny="0" src="images/San-Ofi-Sist-manofactura_06/img08.png"></img>
+        <img id="imagen9" class="element" _origenx="0" _origeny="0" src="images/San-Ofi-Sist-manofactura_06/img09.png"></img>
+        <img id="imagen10" class="element" _origenx="0" _origeny="0" src="images/San-Ofi-Sist-manofactura_06/img10.png"></img>
+        <img id="imagen11" class="element" _origenx="0" _origeny="0" src="images/San-Ofi-Sist-manofactura_06/img11.png"></img>
+        <img id="imagen12" class="element" _origenx="0" _origeny="0" src="images/San-Ofi-Sist-manofactura_06/img12.png"></img>
+        <img id="imagen13" class="element" _origenx="0" _origeny="0" src="images/San-Ofi-Sist-manofactura_06/img13.png"></img>
+        <img id="imagen14" class="element" _origenx="0" _origeny="0" src="images/San-Ofi-Sist-manofactura_06/img14.png"></img>
+
+        <!-- cargador -->
+        <img id="cargando" class="cargando" src="images/cargando.gif"></img>
+        <canvas id="canvas_id"></canvas>
+
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+
+        cacularEscala();
+        ajustarEscenario();
+
+        function preload() {
+            animacion_entrada($("#cargando"), "default", .2, 0);
+            var preload = new createjs.LoadQueue();
+            preload.addEventListener("complete", iniciaCargador);
+            $.each($('.element'), function() {
+                preload.loadFile($("#" + this.id).attr('src'));
+                //console.log($("#" + this.id).attr('src'));
+            });
+        }
+
+        function iniciaCargador(event) {
+            console.log('load complete');
+            $.each($('.element'), function() {
+                inicializar($("#" + this.id));
+            });
+            $("#cargando").show();
+            $("#cargando").css({
+                'opacity': '1'
+            });
+            animacion_salida($("#cargando"), "desaparece", 0, muestraContenido);
+        }
+
+
+        function muestraContenido() {
+            animacion_entrada($("#imagen1"), "izq_der", 0.7, 0.5);
+            animacion_entrada($("#imagen2"), "der_izq", .7, 1);           
+            animacion_entrada($("#imagen3"), "der_izq", .7, 1);           
+                
+                    
+            // animacion_entrada($("#imagen6"), "der_izq", .7, 1);           
+            // animacion_entrada($("#imagen7"), "der_izq", .7, 1);           
+            // animacion_entrada($("#imagen8"), "der_izq", .7, 1);           
+            // animacion_entrada($("#imagen9"), "der_izq", .7, 1);           
+            // animacion_entrada($("#imagen10"), "der_izq", .7, 1);           
+            // animacion_entrada($("#imagen11"), "der_izq", .7, 1);           
+            // animacion_entrada($("#imagen12"), "der_izq", .7, 1);           
+            // animacion_entrada($("#imagen13"), "der_izq", .7, 1);           
+            // animacion_entrada($("#imagen14"), "der_izq", .7, 1);           
+             parent.playAudio(18, 1000,terminaAudio18);
+          
+             
+            
+             
+        }
+
+        function terminaAudio18() {
+            parent.playAudio(19, 1000,terminaAudio19);
+            animacion_entrada($("#imagen4"), "der_izq", .7, 1);       
+        }
+        function terminaAudio19() {
+            parent.playAudio(20, 1000,terminaAudio20);
+            animacion_entrada($("#imagen5"), "der_izq", .7, 1);       
+        }
+         function terminaAudio20() {
+            parent.playAudio(21, 1000,terminaAudio21);
+            animacion_entrada($("#imagen6"), "der_izq", .7, 1);       
+        }
+         function terminaAudio21() {
+            parent.playAudio(22, 1000,terminaAudio22);
+            animacion_entrada($("#imagen7"), "der_izq", .7, 1);       
+        }
+         function terminaAudio22() {
+            parent.playAudio(23, 1000,terminaAudio23);
+            animacion_entrada($("#imagen8"), "der_izq", .7, 1);       
+        }
+         function terminaAudio23() {
+            parent.playAudio(24, 1000,terminaAudio24);
+            animacion_entrada($("#imagen9"), "der_izq", .7, 1);       
+        }
+         function terminaAudio24() {
+            parent.playAudio(25, 1000,terminaAudio25);
+            animacion_entrada($("#imagen10"), "der_izq", .7, 1);       
+        }
+         function terminaAudio25() {
+            parent.playAudio(26, 1000,terminaAudio26);
+            animacion_entrada($("#imagen11"), "der_izq", .7, 1);       
+        }
+         function terminaAudio26() {
+            parent.playAudio(27, 1000,terminaAudio27);
+            animacion_entrada($("#imagen12"), "der_izq", .7, 1);       
+        }
+         function terminaAudio27() {
+            parent.playAudio(28, 1000,terminaAudio28);
+            animacion_entrada($("#imagen13"), "der_izq", .7, 1);       
+        }
+         function terminaAudio28() {
+            parent.playAudio(29, 1000,terminarPantalla);
+            animacion_entrada($("#imagen14"), "der_izq", .7, 1);       
+        }
+
+
+        ///////////////// botonIniciar ////////////////
+        // $("#botonIniciar").click(function() {
+        //     terminarPantalla();
+        //     parent.nextPage();
+        // });
+
+
+
+        preload();
+
+    });
+
+</script>
+
+</html>

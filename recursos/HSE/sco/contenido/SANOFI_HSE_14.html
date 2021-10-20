@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="es" />
+
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="../js/Buzz.min.js"></script> <!-- colocar esta ruta por la actualizacion de google de no mas de 75 mediaplayers o audios en cada pagweb -->
+     <script src="js/Audios.js"></script>    <!-- colocar esta ruta por la actualizacion de google de no mas de 75 mediaplayers o audios en cada pagweb -->
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/Time.js"></script>
+    <script src="js/Animations.min.js"></script>
+    <script src="js/bounce.min.js"></script>
+    <link rel="stylesheet" href="css/Reset.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
+    <title>Slide 1</title>
+</head>
+
+<body onresize="location.reload()">
+    <div id="contenido">
+        <img id="pleca" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_14/pleca.png"></img>
+
+        <img id="imagen1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_14/img01.png"></img>
+        <img id="imagen2" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_14/img02.png"></img>
+        
+        <img id="imagen3" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_14/img03.png"></img>
+        
+        <img id="imagen4" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_14/img04.png"></img>
+        
+        <img id="imagen5" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_14/img05.png"></img>
+        
+        <img id="boton1" class="element" _origenx="318" _origeny="110.924" src="images/SANOFI_HSE_14/boton1.png"></img>
+        <img id="boton2" class="element" _origenx="561" _origeny="110.924" src="images/SANOFI_HSE_14/boton2.png"></img>
+        <img id="boton3" class="element" _origenx="806" _origeny="110.924" src="images/SANOFI_HSE_14/boton3.png"></img>
+        <!-- cargador -->
+        <img id="cargando" class="cargando" src="images/cargando.gif"></img>
+        <canvas id="canvas_id"></canvas>
+
+    </div>
+</body>
+<script>
+    var visto1 = false;
+    var visto2 = false;
+    var visto3 = false;
+   
+    $(document).ready(function() {
+
+        cacularEscala();
+        ajustarEscenario();
+        var Audios = new Array();
+
+         Audios[1] = new buzz.sound("audios/SIndustrial_HSE_13_03", {
+            formats: ["mp3"],
+            preload: true
+        });
+         Audios[2] = new buzz.sound("audios/SIndustrial_HSE_14_01", {
+            formats: ["mp3"],
+            preload: true
+        });
+         Audios[3] = new buzz.sound("audios/SIndustrial_HSE_14_02", {
+            formats: ["mp3"],
+            preload: true
+        });
+         Audios[4] = new buzz.sound("audios/SIndustrial_HSE_14_03", {
+            formats: ["mp3"],
+            preload: true
+        });
+
+        function preload() {
+            animacion_entrada($("#cargando"), "default", .2, 0);
+            var preload = new createjs.LoadQueue();
+            preload.addEventListener("complete", iniciaCargador);
+            $.each($('.element'), function() {
+                preload.loadFile($("#" + this.id).attr('src'));
+                //console.log($("#" + this.id).attr('src'));
+            });
+        }
+
+        function iniciaCargador(event) {
+            console.log('load complete');
+            $.each($('.element'), function() {
+                inicializar($("#" + this.id));
+            });
+            $("#cargando").show();
+            $("#cargando").css({
+                'opacity': '1'
+            });
+            animacion_salida($("#cargando"), "desaparece", 0, muestraContenido);
+        }
+
+
+        function muestraContenido() {
+           
+            animacion_entrada($("#pleca"), "default", .7, .2);
+            animacion_entrada($("#imagen1"), "default", .7, .4);
+            animacion_entrada($("#imagen2"), "izq_der", .7, .5);
+            animacion_entrada($("#boton1"), "izq_der", 0.7, 9.6);
+            animacion_entrada($("#boton2"), "izq_der", 0.7, 9.7);
+            animacion_entrada($("#boton3"), "izq_der", 0.7, 9.8);
+           //parent.playAudio(37, 1000, parpadeBoton1);
+            playAudio2(Audios[1], 1000, parpadeBoton1);
+                
+            // animacion_entrada($("#imagen6"), "izq_der", .7, 14);
+            // animacion_entrada($("#imagen7"), "izq_der", .7, 22); 
+                     
+            // parpadea($("#botonIniciar"), 3);
+            //parent.playAudio(1, 2500, terminaAudio1);
+            
+        }
+        function parpadeBoton1(){
+             parpadea($("#boton1"), .5);
+        }
+         function parpadeBoton2(){
+             parpadea($("#boton2"), .5);
+        }
+        function parpadeBoton3(){
+             parpadea($("#boton3"), .5);
+        }
+         $("#boton1").click(function() {
+            if ($(this).css('cursor') == 'pointer') {
+                TweenMax.killTweensOf($(this));
+                //$("#boton1_desactivado").hide();
+                $(this).css({
+                    'cursor': 'default',
+                    'opacity': '1'
+                });
+               // parent.playAudio(38, 1000,parpadeBoton2);
+                playAudio2(Audios[2], 1000, parpadeBoton2);
+               animacion_entrada($("#imagen3"), "default", .7, 0);
+               //parpadeBoton2();
+               
+            }
+        });
+
+        $("#boton2").click(function() {
+            if ($(this).css('cursor') == 'pointer') {
+                TweenMax.killTweensOf($(this));
+                //$("#boton1_desactivado").hide();
+                $(this).css({
+                    'cursor': 'default',
+                    'opacity': '1'
+                });
+               //parent.playAudio(39, 1000,parpadeBoton3);
+               playAudio2(Audios[3], 1000, parpadeBoton3);
+               animacion_entrada($("#imagen4"), "default", .7, 0);
+               //parpadeBoton3();
+            }
+        });
+        $("#boton3").click(function() {
+            if ($(this).css('cursor') == 'pointer') {
+                TweenMax.killTweensOf($(this));
+                //$("#boton1_desactivado").hide();
+                $(this).css({
+                    'cursor': 'default',
+                    'opacity': '1'
+                });
+                //parent.playAudio(40, 1000,terminarPantalla);
+                playAudio2(Audios[4], 1000, terminarPantalla);
+               animacion_entrada($("#imagen5"), "default", .7, 0);
+                //parpadeBoton4();
+            }
+        });
+        /*function terminaAudio1() {
+
+            animacion_entrada($("#imagen3"), "izq_der", .7, 0.5);  
+        	parent.playAudio(38, 1000, terminaAudio38);
+        }
+       function terminaAudio38() {         
+          parent.playAudio(39, 1000, terminaAudio39);
+           animacion_entrada($("#imagen4"), "der_izq", .7, 0);
+        }
+        function terminaAudio39() {         
+          parent.playAudio(40, 1000, terminarPantalla);
+           animacion_entrada($("#imagen5"), "izq_der", .7, 0); 
+        }*/
+
+        preload();
+
+    });
+
+</script>
+
+</html>

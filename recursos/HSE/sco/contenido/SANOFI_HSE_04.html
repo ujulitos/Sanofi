@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="es" />
+
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/Time.js"></script>
+    <script src="js/Animations.min.js"></script>
+    <script src="js/bounce.min.js"></script>
+    <link rel="stylesheet" href="css/Reset.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
+    <title>Slide 1</title>
+</head>
+
+<body onresize="location.reload()">
+    <div id="contenido">
+        
+        <img id="fondo" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_04/fondo.png"></img>
+        <img id="pleca" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_04/pleca.png"></img>
+
+        <img id="imagen1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_04/img01.png"></img>
+        <img id="imagen2" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_04/img02.png"></img>
+        <img id="imagen3" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_04/img03.png"></img>
+        <img id="imagen4" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_04/img04.png"></img>
+
+
+        <img id="boton1_desactivado" class="element" _origenx="390.124" _origeny="92.658" src="images/SANOFI_HSE_04/boton1_desactivado.png"></img>
+       
+        <img id="boton2_desactivado" class="element" _origenx="363.356" _origeny="245.202" src="images/SANOFI_HSE_04/boton2_desactivado.png"></img>
+        
+        <img id="boton3_desactivado" class="element" _origenx="325.061" _origeny="404.097" src="images/SANOFI_HSE_04/boton3_desactivado.png"></img>
+        
+
+        <img id="boton1_activado" class="element" _origenx="390.124" _origeny="92.658" src="images/SANOFI_HSE_04/boton1_activado.png"></img>
+       
+        <img id="boton2_activado" class="element" _origenx="363.356" _origeny="245.202" src="images/SANOFI_HSE_04/boton2_activado.png"></img>
+        
+        <img id="boton3_activado" class="element" _origenx="325.061" _origeny="404.097" src="images/SANOFI_HSE_04/boton3_activado.png"></img>
+
+         
+        <!-- cargador -->
+        <img id="cargando" class="cargando" src="images/cargando.gif"></img>
+        <canvas id="canvas_id"></canvas>
+
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+
+        cacularEscala();
+        ajustarEscenario();
+
+        function preload() {
+            animacion_entrada($("#cargando"), "default", .2, 0);
+            var preload = new createjs.LoadQueue();
+            preload.addEventListener("complete", iniciaCargador);
+            $.each($('.element'), function() {
+                preload.loadFile($("#" + this.id).attr('src'));
+                //console.log($("#" + this.id).attr('src'));
+            });
+        }
+
+        function iniciaCargador(event) {
+            console.log('load complete');
+            $.each($('.element'), function() {
+                inicializar($("#" + this.id));
+            });
+            $("#cargando").show();
+            $("#cargando").css({
+                'opacity': '1'
+            });
+            animacion_salida($("#cargando"), "desaparece", 0, muestraContenido);
+        }
+
+        var visto1 = false;
+        var visto2 = false;
+        var visto3 = false;
+        var visto4 = false;
+        var visto5 = false;
+
+        function muestraContenido() {
+            animacion_entrada($("#fondo"), "default", 0, 0);
+            animacion_entrada($("#pleca"), "default", 0, 0);
+            animacion_entrada($("#imagen1"), "arriba_abajo", 0.7, 0.5);
+            animacion_entrada($("#boton1_desactivado"), "arriba_abajo", .7, 2.5);          
+            animacion_entrada($("#boton2_desactivado"), "arriba_abajo", .7, 3.5);            
+            animacion_entrada($("#boton3_desactivado"), "arriba_abajo", .7, 4.5);    
+            
+         
+            parent.playAudio(9, 500, terminaAudio46);       
+                                     
+        }
+        
+        
+        function terminaAudio46(){
+             parpadea($("#boton1_activado"), .5);
+         }
+        
+          ///////////////// botón 1 ////////////////
+           // $("#boton1").css('cursor','pointer');
+        $("#boton1_activado").click(function() {
+            if ($(this).css('cursor') == 'pointer') {
+                TweenMax.killTweensOf($(this));
+                $("#boton1_desactivado").hide();
+                $(this).css({
+                    'cursor': 'default',
+                    'opacity': '1'
+                });
+                parent.playAudio(10, 1000,terminaAudio47);
+               animacion_entrada($("#imagen2"), "der_izq", .7, 0.5);
+
+              
+               console.log(visto1);
+           
+            }
+        });
+
+         function terminaAudio47(){
+             parpadea($("#boton2_activado"), .5);
+         }
+        //$("#boton2").css('cursor','pointer');
+           $("#boton2_activado").click(function() {
+            if ($(this).css('cursor') == 'pointer') {
+                TweenMax.killTweensOf($(this));
+                 $("#boton2_desactivado").hide();
+                $(this).css({
+                    'cursor': 'default',
+                    'opacity': '1'
+                });
+                
+                parent.playAudio(11, 1000,terminaAudio49);
+                animacion_entrada($("#imagen3"), "der_izq", .7, 0.5);
+             
+            }
+        });
+       
+       
+        function terminaAudio49(){
+             parpadea($("#boton3_activado"), .5);
+         }
+
+         $("#boton3_activado").click(function() {
+            if ($(this).css('cursor') == 'pointer') {
+                TweenMax.killTweensOf($(this));
+                 $("#boton3_desactivado").hide();
+                $(this).css({
+                    'cursor': 'default',
+                    'opacity': '1'
+                });
+               
+                parent.playAudio(12, 1000,terminarPantalla);
+                 animacion_entrada($("#imagen4"), "der_izq", .7, 0.5);
+               
+               
+            }
+        });
+       
+
+        preload();
+
+    });
+
+</script>
+
+</html>

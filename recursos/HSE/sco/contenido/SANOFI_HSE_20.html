@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="es" />
+
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="../js/Buzz.min.js"></script> <!-- colocar esta ruta por la actualizacion de google de no mas de 75 mediaplayers o audios en cada pagweb -->
+     <script src="js/Audios.js"></script>    <!-- colocar esta ruta por la actualizacion de google de no mas de 75 mediaplayers o audios en cada pagweb -->
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/Time.js"></script>
+    <script src="js/Animations.min.js"></script>
+    <script src="js/bounce.min.js"></script>
+    <link rel="stylesheet" href="css/Reset.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
+    <title>Slide 1</title>
+</head>
+
+<body onresize="location.reload()">
+    <div id="contenido">      
+        <img id="fondo" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_20/fondo.png"></img>
+        <img id="pleca" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_20/pleca.png"></img>
+        <img id="imagen1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_20/img01.png"></img>
+
+        <img id="instrucciones" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_20/instrucciones.png"></img>
+        <img id="pop1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_20/pop1.png"></img>
+        <img id="pop2" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_20/pop2.png"></img>
+        <img id="pop2_1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_20/pop2_1.png"></img>
+        <img id="pop2_2" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_20/pop2_2.png"></img>
+
+        <img id="pop3" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_20/pop3.png"></img>
+        <img id="pop4" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_20/pop4.png"></img>
+        <img id="pop5" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_20/pop5.png"></img>
+        <img id="pop6" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_20/pop6.png"></img>
+
+        <img id="boton1" class="element" _origenx="352.256" _origeny="201.827" src="images/SANOFI_HSE_20/boton1.png"></img>
+        <img id="boton2" class="element" _origenx="352.256" _origeny="259.651" src="images/SANOFI_HSE_20/boton2.png"></img>
+        <img id="boton3" class="element" _origenx="352.256 " _origeny="317.854" src="images/SANOFI_HSE_20/boton3.png"></img>
+        <img id="boton4" class="element" _origenx="352.256 " _origeny="375.913" src="images/SANOFI_HSE_20/boton4.png"></img>
+        <img id="boton5" class="element" _origenx="352.256" _origeny="434.632" src="images/SANOFI_HSE_20/boton5.png"></img>        
+       
+           <img id="atras" class="element"     _origenx="920" _origeny="280" src="images/SANOFI_HSE_20/botonAtras.png"></img> 
+           <img id="atras1" class="element"     _origenx="920" _origeny="280" src="images/SANOFI_HSE_20/botonAtras.png"></img> 
+           <img id="atras2" class="element"     _origenx="920" _origeny="280" src="images/SANOFI_HSE_20/botonAtras.png"></img> 
+
+           <img id="siguiente" class="element" _origenx="920" _origeny="210" src="images/SANOFI_HSE_20/botonSiguiente.png"></img>            
+           <img id="siguiente1" class="element" _origenx="920" _origeny="210" src="images/SANOFI_HSE_20/botonSiguiente.png"></img>            
+           <img id="siguiente2" class="element" _origenx="920" _origeny="210" src="images/SANOFI_HSE_20/botonSiguiente.png"></img>            
+        <!-- cargador -->
+        <img id="cargando" class="cargando" src="images/cargando.gif"></img>
+        <canvas id="canvas_id"></canvas>
+
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+
+        cacularEscala();
+        ajustarEscenario();
+        var Audios = new Array();
+        
+         Audios[1] = new buzz.sound("audios/SIndustrial_HSE_20_01", {
+            formats: ["mp3"],
+            preload: true
+        });
+         Audios[2] = new buzz.sound("audios/SIndustrial_HSE_20_02", {
+            formats: ["mp3"],
+            preload: true
+        });
+          Audios[3] = new buzz.sound("audios/SIndustrial_HSE_20_03", {
+            formats: ["mp3"],
+            preload: true
+        });
+           Audios[4] = new buzz.sound("audios/SIndustrial_HSE_20_04", {
+            formats: ["mp3"],
+            preload: true
+        });
+            Audios[5] = new buzz.sound("audios/SIndustrial_HSE_20_05", {
+            formats: ["mp3"],
+            preload: true
+        });
+             Audios[6] = new buzz.sound("audios/SIndustrial_HSE_20_06", {
+            formats: ["mp3"],
+            preload: true
+        });
+              Audios[7] = new buzz.sound("audios/SIndustrial_HSE_20_07", {
+            formats: ["mp3"],
+            preload: true
+        });
+               Audios[8] = new buzz.sound("audios/SIndustrial_HSE_20_08", {
+            formats: ["mp3"],
+            preload: true
+        });
+
+                Audios[9] = new buzz.sound("audios/SIndustrial_HSE_20_09", {
+            formats: ["mp3"],
+            preload: true
+        });
+        function preload() {
+            animacion_entrada($("#cargando"), "default", .2, 0);
+            var preload = new createjs.LoadQueue();
+            preload.addEventListener("complete", iniciaCargador);
+            $.each($('.element'), function() {
+                preload.loadFile($("#" + this.id).attr('src'));
+                //console.log($("#" + this.id).attr('src'));
+            });
+        }
+
+        function iniciaCargador(event) {
+            console.log('load complete');
+            $.each($('.element'), function() {
+                inicializar($("#" + this.id));
+            });
+            $("#cargando").show();
+            $("#cargando").css({
+                'opacity': '1'
+            });
+            animacion_salida($("#cargando"), "desaparece", 0, muestraContenido);
+        }
+
+
+        function muestraContenido() {
+            animacion_entrada($("#fondo"), "default", 0, 0);
+            animacion_entrada($("#pleca"), "default", 0, 0);
+            animacion_entrada($("#instrucciones"), "izq_der", 0.7, 1);
+            animacion_entrada($("#imagen1"), "der_izq", 0.7, 1);
+            // animacion_entrada($("#boton1"), "izq_der", 0.7, 1.5);
+            // animacion_entrada($("#boton2"), "izq_der", 0.7, 2);
+            // animacion_entrada($("#boton3"), "izq_der", 0.7, 3);
+            // animacion_entrada($("#boton4"), "izq_der", 0.7, 4);
+            // animacion_entrada($("#boton5"), "izq_der", 0.7, 5);
+            
+             //parent.playAudio(53, 1000,parpadeBoton1);
+              playAudio2(Audios[1], 1000, parpadeBoton1);
+           
+        }
+        function parpadeBoton1(){
+             parpadea($("#boton1"), .5);
+        }
+        function salenpops(){
+            animacion_salida($("#pop1"), "desaparece", 0);
+            animacion_salida($("#pop2"), "desaparece", 0);
+            animacion_salida($("#pop2_1"), "desaparece", 0);
+            animacion_salida($("#pop2_2"), "desaparece", 0);
+            animacion_salida($("#pop3"), "desaparece", 0);
+            animacion_salida($("#pop4"), "desaparece", 0);
+            animacion_salida($("#pop5"), "desaparece", 0);
+            animacion_salida($("#pop6"), "desaparece", 0);
+           
+
+        }
+       
+        $("#boton1").click(function() {
+            if ($(this).css('cursor') == 'pointer') {
+                TweenMax.killTweensOf($(this));
+                // $(this).hide();
+                $(this).css({
+                    'cursor': 'default',
+                    'opacity': '1'
+                });
+                salenpops();
+                animacion_entrada($("#pop1"), "default", .7, .8);
+                 //parent.playAudio(54, 1000,terminaAudio54);
+                  playAudio2(Audios[2], 1000, terminaAudio54);
+                 function terminaAudio54(){
+                 parpadea($("#boton2"), 3);
+                 }               
+              
+           
+            }
+        });
+        $("#boton2").click(function() {
+            if ($(this).css('cursor') == 'pointer') {
+                TweenMax.killTweensOf($(this));
+                // $(this).hide();
+                $(this).css({
+                    'cursor': 'default',
+                    'opacity': '1'
+                });
+                salenpops();
+                animacion_entrada($("#pop2"), "default", .7, .8);
+                 //parent.playAudio(55, 1000,terminaAudio55);
+                 playAudio2(Audios[3], 1000, terminaAudio55);
+                 function terminaAudio55(){
+                parpadea($("#siguiente"), .5);
+                 }
+
+               // parpadea($("#boton3"), .3);
+           
+            }
+        });
+             $("#siguiente").click(function() {
+                 if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    salenpops();
+                    animacion_entrada($("#pop2_1"), "default", .7, .8);
+                     //parent.playAudio(56, 1000,terminaAudio56);
+                      playAudio2(Audios[4], 1000, terminaAudio56);
+                     function terminaAudio56(){
+                    parpadea($("#siguiente1"), .5);                   
+                    parpadea($("#atras"), .5);
+                     }
+                }
+            });
+             $("#siguiente1").click(function() {
+                 if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    salenpops();
+                    animacion_entrada($("#pop2_2"), "default", .7, .8);
+                    //parent.playAudio(57, 1000,terminaAudio57);
+                     playAudio2(Audios[5], 1000, terminaAudio57);
+                     function terminaAudio57(){                
+                    parpadea($("#atras1"), .3);
+                    parpadea($("#boton3"), .3);
+                      }
+                }
+            });
+             $("#atras").click(function() {
+                 if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    salenpops();
+                    animacion_entrada($("#pop2"), "default", .7, .8);
+                   // parent.playAudio(55, 1000,terminaAudio55);
+                    playAudio2(Audios[3], 1000, terminaAudio55);
+                     function terminaAudio55(){
+                     parpadea($("#siguiente"), .5);                   
+                    // parpadea($("#atras1"), .3);
+               }
+                }
+            });
+              $("#atras1").click(function() {
+                 if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    salenpops();
+                    animacion_entrada($("#pop2_1"), "default", .7, .8);
+                    //parent.playAudio(56, 1000,terminaAudio56);
+                    playAudio2(Audios[4], 1000, terminaAudio56);
+                     function terminaAudio56(){
+                     parpadea($("#siguiente1"), .5);                   
+                    // parpadea($("#atras1"), .3);
+                    }
+                }
+            });
+
+              $("#boton3").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                // $(this).hide();
+                $(this).css({
+                    'cursor': 'default',
+                    'opacity': '1'
+                });
+                animacion_salida($("#atras"), "desaparece", 0);
+                animacion_salida($("#atras1"), "desaparece", 0);
+                animacion_salida($("#siguiente"), "desaparece", 0);
+                animacion_salida($("#siguiente1"), "desaparece", 0);
+                salenpops();
+                animacion_entrada($("#pop3"), "default", .7, .8);
+                //parent.playAudio(58, 1000,terminaAudio58);
+                playAudio2(Audios[6], 1000, terminaAudio58);
+                function terminaAudio58(){
+                 parpadea($("#boton4"), 3);
+             }
+
+
+         }
+        });
+            $("#boton4").click(function() {
+            if ($(this).css('cursor') == 'pointer') {
+                TweenMax.killTweensOf($(this));
+                // $(this).hide();
+                $(this).css({
+                    'cursor': 'default',
+                    'opacity': '1'
+                });
+                salenpops();
+                animacion_entrada($("#pop4"), "default", .7, .8);
+                //parent.playAudio(59, 1000,terminaAudio59);
+                playAudio2(Audios[7], 1000, terminaAudio59);
+                function terminaAudio59(){
+               parpadea($("#boton5"), 3);
+           }
+            }
+        });
+
+            $("#boton5").click(function() {
+                if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                // $(this).hide();
+                $(this).css({
+                    'cursor': 'default',
+                    'opacity': '1'
+                });
+                salenpops();
+                 animacion_entrada($("#pop5"), "default", .7, .8);
+                //parent.playAudio(60, 1000,terminaAudio60);
+                 playAudio2(Audios[8], 1000, terminaAudio60);
+                function terminaAudio60(){
+                    parpadea($("#siguiente2"), .5);
+                    
+                }
+                
+            }
+        });
+         $("#siguiente2").click(function() {
+                 if ($(this).css('cursor') == 'pointer') {
+                    TweenMax.killTweensOf($(this));
+                    $(this).hide();
+                    $(this).css({
+                        'cursor': 'default',
+                        'opacity': '1'
+                    });
+                    salenpops();
+                    animacion_entrada($("#pop6"), "default", .7, .8);
+                    //parent.playAudio(61, 1000,terminaAudio61);
+                    playAudio2(Audios[9], 1000, terminaAudio61);
+                     function terminaAudio61(){                
+                    parpadea($("#atras2"), .3);
+                    terminarPantalla();
+                      }
+                }
+            });
+
+         $("#atras2").click(function() {
+           if ($(this).css('cursor') == 'pointer') {
+            TweenMax.killTweensOf($(this));
+            $(this).hide();
+            $(this).css({
+                'cursor': 'default',
+                'opacity': '1'
+            });
+            salenpops();
+            animacion_entrada($("#pop5"), "default", .7, .8);
+            //parent.playAudio(60, 1000,terminaAudio60);
+             playAudio2(Audios[8], 1000, terminaAudio60);
+            function terminaAudio60(){
+               parpadea($("#siguiente1"), .5);                   
+                    // parpadea($("#atras1"), .3);
+                }
+            }
+        });
+          
+        ///////////////// botonIniciar ////////////////
+        // $("#botonIniciar").click(function() {
+        //     terminarPantalla();
+        //     parent.nextPage();
+        // });
+
+
+
+        preload();
+
+    });
+
+</script>
+
+</html>

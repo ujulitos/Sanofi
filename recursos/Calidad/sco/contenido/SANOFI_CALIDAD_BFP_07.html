@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="es" />
+
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/Time.js"></script>
+    <script src="js/Animations.min.js"></script>
+    <script src="js/bounce.min.js"></script>
+    <link rel="stylesheet" href="css/Reset.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
+    <title>Slide 1</title>
+</head>
+
+<body onresize="location.reload()">
+    <div id="contenido">      
+        <img id="fondo" class="element" _origenx="0" _origeny="0" src="images/SANOFI_CALIDAD_BFP_07/fondo.png"></img>
+        <img id="pleca" class="element" _origenx="0" _origeny="0" src="images/SANOFI_CALIDAD_BFP_07/pleca.png"></img>
+
+        <img id="imagen1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_CALIDAD_BFP_07/img01.png"></img>
+        <img id="instrucciones" class="element" _origenx="0" _origeny="0" src="images/SANOFI_CALIDAD_BFP_07/instrucciones.png"></img>
+        
+        <img id="texto1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_CALIDAD_BFP_07/texto1.png"></img>
+        <img id="texto2" class="element" _origenx="0" _origeny="0" src="images/SANOFI_CALIDAD_BFP_07/texto2.png"></img>
+        <img id="texto3" class="element" _origenx="0" _origeny="0" src="images/SANOFI_CALIDAD_BFP_07/texto3.png"></img>
+       
+       
+ 
+        <img id="atras" class="element" _origenx="75.354" _origeny="366.293" src="images/SANOFI_CALIDAD_BFP_07/atras.png"></img>
+        <img id="siguiente" class="element" _origenx="852.321" _origeny="366.293" src="images/SANOFI_CALIDAD_BFP_07/siguiente.png"></img>
+        
+        <!-- cargador -->
+        <img id="cargando" class="cargando" src="images/cargando.gif"></img>
+        <canvas id="canvas_id"></canvas>
+
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+
+        cacularEscala();
+        ajustarEscenario();
+
+        function preload() {
+            animacion_entrada($("#cargando"), "default", .2, 0);
+            var preload = new createjs.LoadQueue();
+            preload.addEventListener("complete", iniciaCargador);
+            $.each($('.element'), function() {
+                preload.loadFile($("#" + this.id).attr('src'));
+                //console.log($("#" + this.id).attr('src'));
+            });
+        }
+
+        function iniciaCargador(event) {
+            console.log('load complete');
+            $.each($('.element'), function() {
+                inicializar($("#" + this.id));
+            });
+            $("#cargando").show();
+            $("#cargando").css({
+                'opacity': '1'
+            });
+            animacion_salida($("#cargando"), "desaparece", 0, muestraContenido);
+        }
+
+
+        function muestraContenido() {
+            animacion_entrada($("#fondo"), "default", 0, 0);
+            animacion_entrada($("#pleca"), "default", 0, 0);
+            animacion_entrada($("#imagen1"), "der_izq", 0.7, 0.5);
+            parent.playAudio(19, 1000,terminaAudio1);
+            
+        }
+        
+        function terminaAudio1(){
+            animacion_entrada($("#instrucciones"), "der_izq", 0.7, 0.5);
+            
+            //comienzaCarrusel('texto',3,'siguiente','atras');
+            parent.playAudio(20, 1000,terminaAudio2);
+            //parpadea($("#siguiente"),.5);
+        }
+        function terminaAudio2(){
+            animacion_entrada($("#texto1"), "der_izq", 0.7, 0.5);
+            parent.playAudio(21, 1000,terminaAudio3);
+            
+            
+        }
+
+        function terminaAudio3(){
+            comienzaCarrusel('texto',3,'siguiente','atras');
+            parpadea($("#siguiente"),.5);
+        }    
+        function comienzaCarrusel( IdTexto,cuantosTextos,IdBotonSiguiente,IdBotonAtras){
+            var audiosCarrusel = [21,22,23];
+                var contador = 1;
+                //parent.playAudio(20, 1000,ParpadeaBotones);
+
+                function salentextos(num){
+                console.log("El id: "+"#"+IdTexto+num);
+                    
+                    $("#"+IdTexto+num).hide();   
+               
+                }
+                function ParpadeaBotones(num){
+                   
+                    if(contador >= cuantosTextos){
+                        //TweenMax.killTweensOf($(this));
+                         parpadea($("#atras"),.5);
+                         TweenMax.killTweensOf($("#"+IdBotonSiguiente));
+                        $("#"+IdBotonSiguiente).hide();
+                        terminarPantalla();
+                    }else if(contador <= 1){
+                        parpadea($("#siguiente"),.5);
+                        TweenMax.killTweensOf($("#"+IdBotonAtras));
+                        $("#"+IdBotonAtras).hide();
+                        
+                        
+                    }else{
+
+                        parpadea($("#siguiente"),.5);  
+                        parpadea($("#atras"),.5);
+                    }
+
+
+                }
+                /*function ultimoAudio(){
+                    console.log("Entra ultimo_audio");
+                   parent.playAudio(audiosCarrusel[3], 500,ParpadeaBotones);                      
+                }*/
+
+                
+                $("#"+IdBotonSiguiente).click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                        contador++;
+                            TweenMax.killTweensOf($(this));
+                           $(this).hide();
+                           $("#"+IdBotonAtras).hide()
+                            $(this).css({
+                                 //'cursor': 'default',
+                                'opacity': '1'
+                            });
+                            salentextos(contador-1);
+                            
+                            console.log("es el #texto"+ contador);
+                            animacion_entrada($("#"+IdTexto+ contador), "der_izq", .7, 0);                    
+                            parent.playAudio(audiosCarrusel[(contador - 1)], 500,ParpadeaBotones);                            
+
+                            /*if(contador == 3){
+                                
+                                parent.playAudio(audiosCarrusel[(contador - 1)],500,ultimoAudio);
+                                
+                            }else{
+                                parent.playAudio(audiosCarrusel[(contador - 1)], 500,ParpadeaBotones);
+                            }*/
+
+                            
+
+                    }
+                });
+
+                $("#" + IdBotonAtras).click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                        contador--;
+                            TweenMax.killTweensOf($(this));
+                            $(this).hide();
+                            $("#"+IdBotonSiguiente).hide();
+                            $(this).css({
+                                'opacity': '1'
+                            });
+                            salentextos((contador+1));
+                            console.log("es el #texto"+contador);
+                            animacion_entrada($("#"+IdTexto+contador), "izq_der", .7, 0);                    
+                            parent.playAudio(audiosCarrusel[(contador-1)], 500,ParpadeaBotones);
+                            
+                    }
+                }); 
+            }
+
+        preload();
+
+    });
+
+</script>
+
+</html>

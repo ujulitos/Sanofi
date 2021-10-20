@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="es" />
+
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="../js/Buzz.min.js"></script> <!-- colocar esta ruta por la actualizacion de google de no mas de 75 mediaplayers o audios en cada pagweb -->
+     <script src="js/Audios.js"></script>    <!-- colocar esta ruta por la actualizacion de google de no mas de 75 mediaplayers o audios en cada pagweb -->
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/Time.js"></script>
+    <script src="js/Animations.min.js"></script>
+    <script src="js/bounce.min.js"></script>
+    <link rel="stylesheet" href="css/Reset.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="css/Style.css" type="text/css" charset="utf-8" />
+    <title>Slide 1</title>
+</head>
+
+<body onresize="location.reload()">
+    <div id="contenido">      
+         <img id="fondo" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_37_1/fondo.png"></img>
+        
+        <img id="pleca" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_37_1/pleca.png"></img>
+        <img id="imagen1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_37_1/img01.png"></img>
+        <img id="imagen3" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_37_1/img03.png"></img>
+        <img id="escenario" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_37_1/img02.png"></img>
+        
+        
+        <div _id="01_01" id="lugar1" class="element boton drop" _origenx="442.214" _origeny="141.524" style="width:46.786px; height:33.196px;"></div>
+        <div _id="02_02" id="lugar2" class="element boton drop" _origenx="442.214" _origeny="179.79" style="width:46.786px; height:33.196px;"></div>
+        <div _id="03_03" id="lugar3" class="element boton drop" _origenx="442.214" _origeny="219.813" style="width:46.786px; height:33.196px;"></div>
+        <div _id="04_04" id="lugar4" class="element boton drop" _origenx="442.214" _origeny="257.546" style="width:46.786px; height:33.196px;"></div>
+        <div _id="05_05" id="lugar5" class="element boton drop" _origenx="442.214" _origeny="296.524" style="width:46.786px; height:33.196px;"></div>
+        <div _id="06_06" id="lugar6" class="element boton drop" _origenx="442.214" _origeny="334.257" style="width:46.786px; height:33.196px;"></div>
+        <div _id="07_07" id="lugar7" class="element boton drop" _origenx="442.214" _origeny="372.813" style="width:46.786px; height:33.196px;"></div>
+        <div _id="08_08" id="lugar8" class="element boton drop" _origenx="442.214" _origeny="411.28" style="width:46.786px; height:33.196px;"></div>
+        <div _id="09_09" id="lugar9" class="element boton drop" _origenx="442.214" _origeny="449.546" style="width:46.786px; height:33.196px;"></div>
+        <div _id="10_10" id="lugar10" class="element boton drop" _origenx="442.214" _origeny="486.79" style="width:46.786px; height:33.196px;"></div>
+        <div _id="11_11" id="lugar11" class="element boton drop" _origenx="442.214" _origeny="524.28" style="width:46.786px; height:33.196px;"></div>
+        
+        
+       <img _id="01_06" id="drag1" class="element drag" _origenx="26.214" _origeny="108.257" src="images/SANOFI_HSE_37_1/drag1.png"></img>
+       <img _id="02_05" id="drag2" class="element drag" _origenx="26.214" _origeny="147.524" src="images/SANOFI_HSE_37_1/drag2.png"></img>
+       <img _id="03_02" id="drag3" class="element drag" _origenx="26.214" _origeny="186.79" src="images/SANOFI_HSE_37_1/drag3.png"></img>
+       <img _id="04_11" id="drag4" class="element drag" _origenx="26.214" _origeny="225.28" src="images/SANOFI_HSE_37_1/drag4.png"></img>
+       <img _id="05_09" id="drag5" class="element drag" _origenx="26.214" _origeny="263.546" src="images/SANOFI_HSE_37_1/drag5.png"></img>
+       <img _id="06_07" id="drag6" class="element drag" _origenx="26.214" _origeny="301.813" src="images/SANOFI_HSE_37_1/drag6.png"></img>
+       <img _id="07_01" id="drag7" class="element drag" _origenx="26.214" _origeny="340.524" src="images/SANOFI_HSE_37_1/drag7.png"></img>
+       <img _id="08_10" id="drag8" class="element drag" _origenx="26.214" _origeny="378.79" src="images/SANOFI_HSE_37_1/drag8.png"></img>
+       <img _id="09_08" id="drag9" class="element drag" _origenx="26.214" _origeny="416.28" src="images/SANOFI_HSE_37_1/drag9.png"></img>
+       <img _id="10_04" id="drag10" class="element drag" _origenx="26.214" _origeny="453.546" src="images/SANOFI_HSE_37_1/drag10.png"></img>
+       <img _id="11_03" id="drag11" class="element drag" _origenx="26.214" _origeny="491.813" src="images/SANOFI_HSE_37_1/drag11.png"></img>
+
+        <!--pregunta 1 -->
+        <img id="pregunta1" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_37_1/pregunta01.png"></img>
+        <img id="resp1_1" class="element" _origenx="127.214" _origeny="239.813" src="images/SANOFI_HSE_37_1/resp1_1.png"></img>
+        <img id="resp1_2" class="element" _origenx="127.214" _origeny="321.092" src="images/SANOFI_HSE_37_1/resp1_2.png"></img>
+        <img id="resp1_3" class="element" _origenx="127.214" _origeny="402.127" src="images/SANOFI_HSE_37_1/resp1_3.png"></img>
+        
+        <!--pregunta 2 -->
+        <img id="pregunta2" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_37_1/pregunta02.png"></img>
+        <img id="resp2_1" class="element" _origenx="127.214" _origeny="239.813" src="images/SANOFI_HSE_37_1/resp2_1.png"></img>
+        <img id="resp2_2" class="element" _origenx="127.214" _origeny="321.092" src="images/SANOFI_HSE_37_1/resp2_2.png"></img>
+        <img id="resp2_3" class="element" _origenx="127.214" _origeny="402.127" src="images/SANOFI_HSE_37_1/resp2_3.png"></img>
+        
+        <!--pregunta 3 -->
+        <img id="pregunta3" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_37_1/pregunta03.png"></img>
+        <img id="resp3_1" class="element" _origenx="127.214" _origeny="239.813" src="images/SANOFI_HSE_37_1/resp3_1.png"></img>
+        <img id="resp3_2" class="element" _origenx="127.214" _origeny="321.092" src="images/SANOFI_HSE_37_1/resp3_2.png"></img>
+        <img id="resp3_3" class="element" _origenx="127.214" _origeny="402.127" src="images/SANOFI_HSE_37_1/resp3_3.png"></img>
+       
+        <!--pregunta 4 -->
+        <img id="pregunta4" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_37_1/pregunta04.png"></img>
+        <img id="resp4_1" class="element" _origenx="127.214" _origeny="239.813" src="images/SANOFI_HSE_37_1/resp4_1.png"></img>
+        <img id="resp4_2" class="element" _origenx="127.214" _origeny="321.092" src="images/SANOFI_HSE_37_1/resp4_2.png"></img>
+        <img id="resp4_3" class="element" _origenx="127.214" _origeny="402.127" src="images/SANOFI_HSE_37_1/resp4_3.png"></img>
+       
+        <img id="retroBien" class="element" _origenx="0" _origeny="0" src="images/SANOFI_HSE_37_1/retroBien.png"></img>
+       
+        <!-- cargador -->
+        <img id="cargando" class="cargando" src="../images/cargando.gif"></img>
+        <canvas id="canvas_id"></canvas>
+
+    </div>
+</body>
+<style>
+  
+    .boton {
+        background-color: rgba(167, 255, 108, 0);
+    }    
+</style>
+<script>
+    $(document).ready(function() {
+        var cuantaosLugares = 11;
+        var cuantasPiezas = 11;
+        var contador = 0;
+        var dragsColocados = new Array();
+        var aciertos = 0;
+        var puntuacion = 0;
+        var minimo = 80;
+        var elEjercicio = 1;
+        var numerodeintentos = 2;
+        var palomaVisible = false;
+        var segundos = 31;
+        var tiempo;
+        cacularEscala();
+        ajustarEscenario();
+         var Audios = new Array();
+        
+        Audios[1] = new buzz.sound("audios/s_bien", {
+            formats: ["mp3"],
+            preload: true
+        });
+        Audios[2] = new buzz.sound("audios/s_mal", {
+            formats: ["mp3"],
+            preload: true
+        });
+
+        function preload() {
+            animacion_entrada($("#cargando"), "default", .2, 0);
+            var preload = new createjs.LoadQueue();
+            preload.addEventListener("complete", iniciaCargador);
+            $.each($('.element'), function() {
+                preload.loadFile($("#" + this.id).attr('src'));
+                //console.log($("#" + this.id).attr('src'));
+            });
+        }
+
+        function iniciaCargador(event) {
+            console.log('load complete');
+            $.each($('.element'), function() {
+                inicializar($("#" + this.id));
+            });
+            $("#cargando").show();
+            $("#cargando").css({
+                'opacity': '1'
+            });
+            animacion_salida($("#cargando"), "desaparece", 0, muestraContenido);
+        }
+
+
+        function muestraContenido() {
+            animacion_entrada($("#fondo"), "default", 0, 0);
+            animacion_entrada($("#pleca"), "default", 0, 0);
+            animacion_entrada($("#imagen1"), "izq_der", 0.7, 0.5);
+            
+            parent.playAudio(0, 1000,comenzarEvaluacion);
+           
+        }
+
+        function comenzarEvaluacion(){
+
+
+            
+            animacion_entrada($("#escenario"), "izq_der", .5, 0.3);        
+            console.log('comenzarEvaluacion', cuantasPiezas);
+
+            var dropActivoId= "";
+            var dragActivoId= "";
+            //var dropActivoId= "";
+            var dragActivoLugar= "";
+            var dropActivoLugar= "";
+
+            for (a = 1; a <= cuantasPiezas; a++) {
+                for (b = 1; b <= cuantaosLugares; b++) {
+                  dragsColocados[dragsColocados.length] = false;
+
+                  animacion_entrada($("#drag" + a ), "izq_der", .5, 0 + (a * .1));
+                  animacion_entrada($("#lugar" + b), "default", .5, 0 + (b * 0));
+                }
+            }
+
+        $(".drag").css("cursor", "pointer");
+        $(".drag").draggable({
+
+              revert: "invalid",
+              start: function( event, ui ) {
+
+                var esteID = $(this).attr("_id");
+                var esteIDSubstr = parseInt($(this).attr("_id").substr(0, 2),10);
+                var esteIDLugar = parseInt($(this).attr("_id").substr(-2),10);
+                console.log("Drag seleccionado Id: " + esteIDSubstr +" Lugar: "+esteIDLugar);
+                dragActivoId = parseInt(esteIDSubstr,10);
+                dragActivoLugar = esteIDLugar;
+                 //$(".drop").hide();
+                                        
+                }                        
+        });
+        $(".drop").droppable({
+                accept: ".drag",
+                tolerance: "intersect",
+                drop: function(event, ui) {
+                        var esteID = $(this).attr("_id");
+                        var esteIDSubstr = parseInt($(this).attr("_id").substr(0, 2),10);
+                        var esteIDLugarDrop = parseInt($(this).attr("_id").substr(-2),10);
+                        console.log("Colision con: " + esteIDSubstr +" Lugar: "+esteIDLugarDrop);
+                        
+                        //if(esteIDLugarDrop == 0){
+                            //dropActivoLugar = 10;
+                        //}else{
+                         dropActivoId = esteIDSubstr;
+                         dropActivoLugar = esteIDLugarDrop;
+                        //}
+                        //$(".drop").hide();
+                        checkMatch();
+                }
+        });
+
+        function checkMatch(){
+            console.log('Entra en check');
+            
+              console.log("#drag"+dragActivoId);
+              console.log("#lugar"+dropActivoId);
+               $( "#drag"+dragActivoId ).draggable( "option", "revert", false);
+                if (dragActivoLugar == dropActivoLugar) {
+                   console.log('Es correcto, corresponden!');
+                   aciertos++;
+                    //aciertos = aciertos + 1;                    
+                    //animacion_entrada($("#paloma"+ contador), "default", .5,.5);
+                    // retroBuena();
+                    var elLeft = parseInt($("#lugar"+dropActivoId).css("left").substr(0, $("#lugar"+dropActivoId).css("left").length - 2)) - 2 + "px";
+                   // console.log('elLeft', elLeft);
+                    var elTop = parseInt($("#lugar"+dropActivoId).css("top").substr(0, $("#lugar"+dropActivoId).css("top").length - 1));
+                    $("#drag"+dragActivoId).css({
+                        'left': elLeft ,
+                        'top': (elTop)+"px",
+                        'cursor': 'default'
+                    });
+                    $("#lugar"+dropActivoId).hide();
+                    
+                    //$("#drag"+dragActivoId).hide();
+                    $("#drag"+dragActivoId).draggable( "disable");
+                    
+                    //dragsColocados[dragActivoId] = true;
+                    //parent.playAudio(82,500);         
+                }else{
+                    /*var elLeft = parseInt($("#lugar"+dropActivoId).css("left").substr(0, $("#lugar"+dropActivoId).css("left").length - 2)) - 2 + "px";
+                    var elTop = parseInt($("#lugar"+dropActivoId).css("top").substr(0, $("#lugar"+dropActivoId).css("top").length - 1));
+                    $("#drag"+dragActivoId).css({
+                        'left': elLeft ,
+                        'top': (elTop)+"px",
+                        'cursor': 'default'
+                    });*/
+                     // retroMala(dropActivoSubstr);
+                     $( "#drag"+dragActivoId ).draggable( "option", "revert", true);
+                     //$("#drag"+dragActivoId).draggable( "disable");
+                     //$("#lugar"+dropActivoId).hide();
+                     //$("#drag"+dragActivoId).hide();
+                     //$("#lugar"+dropActivoId).droppable("option", "accept", ".nada");
+                    console.log('Error, No corresponden!');                     
+                    //parent.playAudio(83,500);
+                    //animacion_entrada($("#tache"+ contador), "default", .5,.5);
+                }
+
+
+            
+            console.log('aciertos ' + aciertos + ' cuantasPiezas ' + cuantasPiezas);
+
+            if (aciertos == cuantasPiezas) {
+                console.log('Manda a segunda actividad');
+                //terminarPantalla();
+                setTimeout(function() {
+                        //parpadea($("#botonValidar"), 0);
+                    //retroalimenta();
+                    LanzarPreguntas();
+                }, 1500);
+                    //console.log('Acierto:'+aciertos);
+                }
+            }      
+
+    }
+
+    function LanzarPreguntas(){
+        animacion_salida($("#imagen1"), "desaparece", 0, 0);
+        animacion_salida($("#escenario"), "desaparece", 0, 0);
+        animacion_salida($("#drag1"), "desaparece", 0, 0);
+        animacion_salida($("#drag2"), "desaparece", 0, 0);
+        animacion_salida($("#drag3"), "desaparece", 0, 0);
+        animacion_salida($("#drag4"), "desaparece", 0, 0);
+        animacion_salida($("#drag5"), "desaparece", 0, 0);
+        animacion_salida($("#drag6"), "desaparece", 0, 0);
+        animacion_salida($("#drag7"), "desaparece", 0, 0);
+        animacion_salida($("#drag8"), "desaparece", 0, 0);
+        animacion_salida($("#drag9"), "desaparece", 0, 0);
+        animacion_salida($("#drag10"), "desaparece", 0, 0);
+        animacion_salida($("#drag11"), "desaparece", 0, 0);
+        animacion_salida($("#lugar1"), "desaparece", 0, 0);
+        animacion_salida($("#lugar2"), "desaparece", 0, 0);
+        animacion_salida($("#lugar3"), "desaparece", 0, 0);
+        animacion_salida($("#lugar4"), "desaparece", 0, 0);
+        animacion_salida($("#lugar5"), "desaparece", 0, 0);
+        animacion_salida($("#lugar6"), "desaparece", 0, 0);
+        animacion_salida($("#lugar7"), "desaparece", 0, 0);
+        animacion_salida($("#lugar8"), "desaparece", 0, 0);
+        animacion_salida($("#lugar9"), "desaparece", 0, 0);
+        animacion_salida($("#lugar10"), "desaparece", 0, 0);
+        animacion_salida($("#lugar11"), "desaparece", 0, 0);
+        animacion_entrada($("#imagen3"),"der_izq",0.7,0.5);
+        pregunta(1);
+        function pregunta(noPregunta){
+            let count= noPregunta;
+            console.log('noPregunta',noPregunta);
+            //animacion_salida($("#imagen1"), "desaparece", 0, 0);
+            //animacion_salida($("#imagen2"), "desaparece", 0, 0);
+            //animacion_salida($("#imagen3"), "desaparece", 0, 0);
+
+            switch (noPregunta) {
+              case 1:
+                    preguntaTresResp(count);
+                break;
+              case 2:
+                    desaparecePregunta((count-1));    
+                    preguntaTresResp(count);
+                break;
+              case 3:
+                    desaparecePregunta((count-1)); 
+                    preguntaTresResp(count);
+                break;
+              case 4:
+                    desaparecePregunta((count-1)); 
+                    preguntaTresResp(count);
+                break;
+              
+              default:  retroalimenta();
+                
+            }
+        }
+
+        function desaparecePregunta(contador){
+            animacion_salida($("#pregunta"+contador), "desaparece", 0,0);
+            animacion_salida($("#resp"+contador+"_1"), "desaparece", 0,0);
+            animacion_salida($("#resp"+contador+"_2"), "desaparece", 0,0);
+            animacion_salida($("#resp"+contador+"_3"), "desaparece", 0,0);
+            animacion_salida($("#paloma"+contador), "desaparece", 0, 0);
+            animacion_salida($("#tache"+contador+"_1"), "desaparece", 0, 0);
+            animacion_salida($("#tache"+contador+"_2"), "desaparece", 0, 0);
+            animacion_salida($("#tache"+contador+"_3"), "desaparece", 0, 0);
+        }
+        function preguntaTresResp(contador){
+                animacion_entrada($("#pregunta"+contador), "der_izq", .7, .8);
+                
+                $("#resp"+contador+"_1").css({ 'cursor': 'pointer'  });
+                $("#resp"+contador+"_2").css({ 'cursor': 'pointer'  });
+                $("#resp"+contador+"_3").css({ 'cursor': 'pointer'  });
+                animacion_entrada($("#resp"+contador+"_1"), "izq_der", .7, .9);
+                animacion_entrada($("#resp"+contador+"_2"), "izq_der", .7, 1);
+                animacion_entrada($("#resp"+contador+"_3"), "izq_der", .7, 1.1);
+                $("#resp"+contador+"_1").click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                           
+                            /*$("#resp"+contador+"_1").css({ 'cursor': 'default'  });
+                            $("#resp"+contador+"_2").css({ 'cursor': 'default'  });
+                            $("#resp"+contador+"_3").css({ 'cursor': 'default'  });*/
+
+                            if(contador == 1){
+                             
+                            //  parent.playAudio(118, 100);
+                              playAudio2(Audios[2], 100);
+                              
+                            }
+                            if(contador == 2){
+                                
+                             // parent.playAudio(118,100);
+                              playAudio2(Audios[2], 100);
+                            }
+                            if(contador == 3){
+                              
+                             // parent.playAudio(117, 500,mandarMenu);
+                              playAudio2(Audios[1], 500, mandarMenu);
+                              
+                              
+                            }
+                            if(contador == 4){
+                              
+                             // parent.playAudio(117, 500,mandarMenu);
+                               playAudio2(Audios[1], 500, mandarMenu);
+                              
+                              
+                            }
+                          
+                    }
+                   
+                    
+                });
+
+                $("#resp"+contador+"_2").click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                        
+                        /*$("#resp"+contador+"_1").css({ 'cursor': 'default'  });
+                        $("#resp"+contador+"_2").css({ 'cursor': 'default'  });
+                        $("#resp"+contador+"_3").css({ 'cursor': 'default'  });*/
+                        if(contador == 1){
+                              
+                              //parent.playAudio(118, 100);
+                               playAudio2(Audios[2], 100);
+                        }
+                        if(contador == 2){
+                              
+                              //parent.playAudio(117, 100,mandarMenu);
+                              playAudio2(Audios[1], 100, mandarMenu);
+                        }
+                        if(contador == 3){
+                              
+                             // parent.playAudio(118, 100);
+                                playAudio2(Audios[2], 100);
+                               aciertos++;
+                        }
+                        if(contador == 4){
+                              
+                              // parent.playAudio(118, 100);
+                                playAudio2(Audios[2], 100);
+                        }
+                       
+                    }
+                 });  
+                $("#resp"+contador+"_3").click(function() {
+                    if ($(this).css('cursor') == 'pointer') {
+                       
+                        /*$("#resp"+contador+"_1").css({ 'cursor': 'default'  });
+                        $("#resp"+contador+"_2").css({ 'cursor': 'default'  });
+                        $("#resp"+contador+"_3").css({ 'cursor': 'default'  });*/
+                        if(contador == 1){
+                              
+                               //parent.playAudio(117, 100,mandarMenu);
+                               playAudio2(Audios[1], 500, mandarMenu);
+                        }
+                        if(contador == 2){
+                            
+                            // parent.playAudio(118, 100);
+                            playAudio2(Audios[2], 100);
+                              
+                        }
+                        if(contador == 3){
+                            
+                            // parent.playAudio(118, 100);
+                             playAudio2(Audios[2], 100);
+                            
+                        }
+                        if(contador == 4){
+                            
+                            // parent.playAudio(118, 100);
+                             playAudio2(Audios[2], 100);
+                            
+                        }
+ 
+                    }
+                    
+                });
+
+                function mandarMenu(){
+                    pregunta(contador+1);
+                }
+
+        }
+
+        function retroalimenta(){
+            animacion_salida($("#pregunta"+contador), "desaparece", 0,0);
+            animacion_salida($("#resp"+contador+"_1"), "desaparece", 0,0);
+            animacion_salida($("#resp"+contador+"_2"), "desaparece", 0,0);
+            animacion_salida($("#resp"+contador+"_3"), "desaparece", 0,0);
+            animacion_salida($("#paloma"+contador), "desaparece", 0, 0);
+            animacion_salida($("#tache"+contador+"_1"), "desaparece", 0, 0);
+            animacion_salida($("#tache"+contador+"_2"), "desaparece", 0, 0);
+            animacion_salida($("#tache"+contador+"_3"), "desaparece", 0, 0);
+
+            animacion_entrada($("#retroBien"),"izq_der",0.7,0.5,terminarPantalla);
+        }
+
+    }
+    
+        preload();
+
+    });
+
+</script>
+
+</html>
